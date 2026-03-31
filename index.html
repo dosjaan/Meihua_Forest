@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robocon 2026 Meihua Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <h1>Meihua Forest Planner</h1>
+      <p>R2 rule-aware path planning for ABU Robocon 2026</p>
+    </header>
+    <section class="field-spec">
+      <h3>Field Spec (From Provided Drawing)</h3>
+      <div class="controls">
+        <label>Planning Mode
+          <select id="planning-mode">
+            <option value="strict">Strict Competition</option>
+            <option value="practical" selected>Practical Fast Path</option>
+          </select>
+        </label>
+        <span class="small">Practical mode: lower action count is prioritized.</span>
+      </div>
+      <div class="spec-grid">
+        <div class="summary">
+          <div><strong>Forest Layout:</strong> 3 x 4 blocks</div>
+          <div><strong>Heights:</strong> 200H / 400H / 600H</div>
+          <div><strong>Pathway Ring:</strong> 1200 mm</div>
+          <div><strong>Entrance Links:</strong> Block 2</div>
+          <div><strong>Exit Blocks:</strong> 10, 12</div>
+          <div class="small">Default matrix: [400,200,400] / [200,400,600] / [400,600,400] / [200,400,200]</div>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><span class="swatch f200"></span>Meihua 200mm 41-82-16</div>
+          <div class="legend-item"><span class="swatch f400"></span>Meihua 400mm 42-113-56</div>
+          <div class="legend-item"><span class="swatch f600"></span>Meihua 600mm 152-166-80</div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="tabs" role="tablist">
+      <button id="tab-auto-btn" class="tab-btn active" role="tab" aria-selected="true">Auto Optimize</button>
+      <button id="tab-manual-btn" class="tab-btn" role="tab" aria-selected="false">Manual Layout + Plan</button>
+    </nav>
+
+    <section id="tab-auto" class="tab-panel active" role="tabpanel">
+      <div class="controls">
+        <label>Scenarios
+          <input id="auto-scenarios" type="number" min="1" max="200" value="30" />
+        </label>
+        <label>Top Plans
+          <input id="auto-topn" type="number" min="1" max="20" value="5" />
+        </label>
+        <label>Strict Layout
+          <input id="auto-strict" type="checkbox" checked />
+        </label>
+        <button id="auto-run">Generate + Compute</button>
+        <button id="auto-simulate">Simulate #1</button>
+      </div>
+      <div id="auto-summary" class="summary"></div>
+      <div class="content-grid">
+        <div>
+          <h3>Top Ranked Plans</h3>
+          <div id="auto-results" class="results"></div>
+        </div>
+        <div>
+          <h3>Scenario Map</h3>
+          <div id="auto-map" class="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-manual" class="tab-panel" role="tabpanel">
+      <div class="controls">
+        <div class="tool-group">
+          <span>Place:</span>
+          <label><input type="radio" name="place-tool" value="EMPTY" checked /> Empty</label>
+          <label><input type="radio" name="place-tool" value="R2" /> R2 KFS</label>
+          <label><input type="radio" name="place-tool" value="R1" /> R1 KFS</label>
+          <label><input type="radio" name="place-tool" value="FAKE" /> Fake KFS</label>
+        </div>
+        <label>Top Plans
+          <input id="manual-topn" type="number" min="1" max="20" value="5" />
+        </label>
+        <label>Strict Layout
+          <input id="manual-strict" type="checkbox" checked />
+        </label>
+        <button id="manual-validate">Validate Layout</button>
+        <button id="manual-plan">Compute Path</button>
+        <button id="manual-reset">Reset</button>
+        <button id="manual-simulate">Simulate #1</button>
+      </div>
+      <div class="content-grid">
+        <div>
+          <h3>Manual Map</h3>
+          <p class="small">Tip: Left click = place selected KFS. Block heights are fixed by field constant.</p>
+          <div id="manual-map" class="map"></div>
+        </div>
+        <div>
+          <h3>Validation / Plans</h3>
+          <div id="manual-validation" class="summary"></div>
+          <div id="manual-results" class="results"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
