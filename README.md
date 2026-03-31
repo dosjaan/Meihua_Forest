@@ -6,7 +6,7 @@ R2-ийн Meihua Forest path planning, rule validation, estimation хийх эн
 
 1. Folder руу орно:
 ```bash
-cd /home/doska/Desktop/forest_path
+cd /Your_repo_path/forest_path
 ```
 
 2. Static server асаана:
