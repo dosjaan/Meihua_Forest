@@ -1,16 +1,12 @@
-# Meihua Forest Planner (Robocon 2026)
+# Meihua Forest Planner (Python / Streamlit)
 
-R2-ийн Meihua Forest path planning, rule validation, estimation хийх app.
+R2 path planning болон layout validation хийх Streamlit app.
 
-## Python Version (New)
+## Quick Start
 
-JS app-ийн planner логикийг Python руу хөрвүүлсэн (`Streamlit`) хувилбар нэмсэн.
-
-### Run (Python)
-
-1. Folder руу орно:
+1. Project folder руу орно:
 ```bash
-cd /Your_repo_path/forest_path
+cd /path/to/forest_path
 ```
 
 2. Dependency суулгана:
@@ -18,64 +14,54 @@ cd /Your_repo_path/forest_path
 python3 -m pip install -r requirements.txt
 ```
 
-3. App асаана:
+3. App ажиллуулна:
 ```bash
 streamlit run app.py
 ```
 
-4. Browser дээр нээнэ:
-- http://localhost:8501
+4. Browser:
+- `http://localhost:8501`
 
-## Web Version (Original JS)
-
-### Run (JS)
-
-1. Static server асаана:
-```bash
-python3 -m http.server 8080
-```
-
-2. Browser дээр нээнэ:
-- http://localhost:8080
-
-## Project Files
-
-- `app.py` - Python Streamlit UI + planner engine
-- `requirements.txt` - Python dependencies
-- `index.html` - original JS UI layout
-- `styles.css` - original JS UI style
-- `app.js` - original JS planner/scoring engine
-- `robocon_meihua_requirements.md` - requirements/spec
-
-## Python App Tabs
-
-## `Auto Optimize`
-- Random scenario үүсгэнэ
-- Top-N plan тооцоолж score-оор эрэмбэлнэ
-- Сонгосон route-г map дээр тодруулж харуулна
+## Tabs
 
 ## `Manual Layout + Plan`
-- 12 block тус бүр дээр `EMPTY / R2 / R1 / FAKE` сонгоно
-- `Validate Layout` хийж rule шалгана
-- `Compute Path` хийж route гаргана
-- Сонгосон plan-ийн дэлгэрэнгүй metrics харна
+- `R2 blocks`, `R1 blocks`, `Fake block`-ийг comma (`1,3,5`) хэлбэрээр оруулна.
+- `Validate + Plan` дарна.
+- Хэрэв бүрэн layout өгвөл шууд legal plan-уудыг бодно.
+- Хэрэв дутуу layout өгвөл үлдсэн block-уудыг автоматаар нөхөж, хамгийн боломжит (хамгийн сайн score) layout + path-ийг сонгоно.
+- `Top N plans`-оор хамгийн сайн plan-уудын тоог харуулна.
+- `Planning mode`: `practical` эсвэл `strict`.
 
-## Implemented Core Rules
+## `Scenario Generator`
+- Random rule-valid layout-ууд үүсгэнэ.
+- Layout бүрийн best plan-ийг бодож worst-case жагсаалт гаргана.
+- `All feasible scenarios` эсвэл `Worst-only view` горимоор үзнэ.
 
-- Entrance link: block `2`
-- Exit blocks: `10`, `12`
-- Height matrix fixed: `[400,200,400] / [200,400,600] / [400,600,400] / [200,400,200]`
-- Move: adjacent only, `|Δh| <= 200`, slope <= 20
-- Entry/Exit boundary: `|Δh| == 200`
-- Fake KFS touched: violation
-- R1 forbidden blocks: `5, 8`
-- Exit дээр R2 байвал тухайн exit block-ийг pickup хийх hard rule
-- Action model: pickup, drop, wait, climb, descend, terrain
-- Practical mode: wait/drop болон нийт actions-ийг давуу багасгаж эрэмбэлнэ
+## Scoring Controls
+
+`Action Scoring (Adjustable)` хэсгээс дараах жингүүдийг өөрчилж болно:
+- Step
+- Pickup
+- Drop
+- Turn
+- Wait
+- One-scroll penalty
+- Strict mode exit bonuses
+
+## Planner Constraints (Current)
+
+- Grid: 3x4 blocks (1..12)
+- Entrance: block `2`
+- Exit: `10`, `12`
+- Height transitions: robot limits (`<=200mm`, allowed transition pair-ууд)
+- Strict counts (complete layout үед):
+  - `R2 = 4`
+  - `R1 = 3`
+  - `FAKE = 1`
+- Fake block entrance дээр (`2`) байж болохгүй
 
 ## Sanity Check
 
 ```bash
-python3 -m py_compile app.py
-node --check app.js
+python3 -m py_compile app.py planner_backend.py
 ```

@@ -1,794 +1,548 @@
-import itertools
-import math
 import random
-from copy import deepcopy
+from dataclasses import replace
+from itertools import combinations
 
 import streamlit as st
 
-TOKENS = ["EMPTY", "R2", "R1", "FAKE"]
-EXIT_BLOCKS = {10, 12}
-ENTRANCE_LINKS = [2]
-ENTRANCE_HEIGHT = 0
-STEP_MM = 600
-FORBIDDEN_R1_BLOCKS = {5, 8}
-R1_AVOID_RADIUS = 2
+from planner_backend import (
+    DEFAULT_HEIGHTS,
+    ENTRANCE_BLOCKS,
+    Layout,
+    PlannerConfig,
+    StrategyPreferences,
+    plan_routes,
+    validate_layout,
+)
 
-DEFAULT_HEIGHTS = {
-    1: 400,
-    2: 200,
-    3: 400,
-    4: 200,
-    5: 400,
-    6: 600,
-    7: 400,
-    8: 600,
-    9: 400,
-    10: 200,
-    11: 400,
-    12: 200,
-}
-
-GRAPH = {
-    1: [2, 4],
-    2: [1, 3, 5],
-    3: [2, 6],
-    4: [1, 5, 7],
-    5: [2, 4, 6, 8],
-    6: [3, 5, 9],
-    7: [4, 8, 10],
-    8: [5, 7, 9, 11],
-    9: [6, 8, 12],
-    10: [7, 11],
-    11: [8, 10, 12],
-    12: [9, 11],
+HEIGHT_COLORS = {
+    200: "rgb(41,82,16)",
+    400: "rgb(42,113,56)",
+    600: "rgb(152,166,80)",
 }
 
 
-def create_default_blocks():
-    return [{"id": i, "h": DEFAULT_HEIGHTS[i], "token": "EMPTY"} for i in range(1, 13)]
-
-
-def clone_blocks(blocks):
-    return deepcopy(blocks)
-
-
-def get_block(blocks, block_id):
-    for b in blocks:
-        if b["id"] == block_id:
-            return b
-    return None
-
-
-def get_neighbors(node):
-    if node == "E":
-        return list(ENTRANCE_LINKS)
-    return GRAPH.get(node, [])
-
-
-def get_height(blocks, node):
-    if node == "E":
-        return ENTRANCE_HEIGHT
-    return get_block(blocks, node)["h"]
-
-
-def validate_move(blocks, from_node, to_node):
-    if to_node not in get_neighbors(from_node):
-        return {"ok": False, "reason": "Not adjacent"}
-
-    to_block = None if to_node == "E" else get_block(blocks, to_node)
-    if to_block and to_block["token"] == "FAKE":
-        return {"ok": False, "reason": "Violation: touched FAKE KFS"}
-
-    dh = abs(get_height(blocks, to_node) - get_height(blocks, from_node))
-    if dh > 200:
-        return {"ok": False, "reason": "|dH| > 200mm"}
-    if from_node == "E" and dh != 200:
-        return {"ok": False, "reason": "Entry boundary must be exactly 200mm"}
-
-    angle = math.degrees(math.atan2(dh, STEP_MM))
-    if angle > 20:
-        return {"ok": False, "reason": "Slope > 20"}
-
-    return {"ok": True, "reason": "OK", "dh": dh}
-
-
-def validate_exit_boundary(blocks, exit_block_id):
-    if exit_block_id not in EXIT_BLOCKS:
-        return {"ok": False, "reason": "Not valid exit"}
-    dh = abs(get_height(blocks, exit_block_id) - ENTRANCE_HEIGHT)
-    if dh != 200:
-        return {"ok": False, "reason": "Exit boundary must be exactly 200mm"}
-    return {"ok": True, "reason": "OK"}
-
-
-def shortest_path(blocks, start, goal):
-    queue = [{"node": start, "cost": 0.0}]
-    prev = {}
-    dist = {start: 0.0}
-
-    while queue:
-        queue.sort(key=lambda x: x["cost"])
-        current = queue.pop(0)
-
-        if current["node"] == goal:
-            break
-
-        for nb in get_neighbors(current["node"]):
-            mv = validate_move(blocks, current["node"], nb)
-            if not mv["ok"]:
-                continue
-            step_cost = 1 + mv["dh"] / 200
-            nd = current["cost"] + step_cost
-            if nb not in dist or nd < dist[nb]:
-                dist[nb] = nd
-                prev[nb] = current["node"]
-                queue.append({"node": nb, "cost": nd})
-
-    if goal not in dist:
-        return None
-
-    path = []
-    cur = goal
-    while cur is not None:
-        path.append(cur)
-        cur = prev.get(cur)
-    path.reverse()
-    return path
-
-
-def path_cost(blocks, path):
-    if not path or len(path) <= 1:
-        return 0.0
-    cost = 0.0
-    for i in range(1, len(path)):
-        mv = validate_move(blocks, path[i - 1], path[i])
-        if not mv["ok"]:
-            return math.inf
-        cost += 1 + mv["dh"] / 200
-    return cost
-
-
-def can_pickup_from(current_node, target_block_id):
-    return target_block_id in get_neighbors(current_node)
-
-
-def count_r1_touches_on_path(blocks, path):
-    n = 0
-    for node in path or []:
-        if node == "E":
-            continue
-        b = get_block(blocks, node)
-        if b and b["token"] == "R1":
-            n += 1
-    return n
-
-
-def get_adjacent_r2_targets(blocks, node):
-    out = []
-    for nb in get_neighbors(node):
-        b = get_block(blocks, nb)
-        if b and b["token"] == "R2":
-            out.append(nb)
-    return out
-
-
-def get_pickup_anchors(target_block_id):
-    anchors = set(get_neighbors(target_block_id))
-    if target_block_id in ENTRANCE_LINKS:
-        anchors.add("E")
-    return list(anchors)
-
-
-def plan_pickup_sequence(blocks, start_node, pickup_order):
-    best = None
-
-    def dfs(idx, current_node, parts, total_cost, total_touch):
-        nonlocal best
-        if idx == len(pickup_order):
-            best = {
-                "parts": parts,
-                "endNode": current_node,
-                "totalCost": total_cost,
-                "totalTouch": total_touch,
-            }
-            return
-
-        target = pickup_order[idx]
-        for anchor in get_pickup_anchors(target):
-            seg = shortest_path(blocks, current_node, anchor)
-            if not seg:
-                continue
-            if not can_pickup_from(anchor, target):
-                continue
-
-            seg_cost = path_cost(blocks, seg)
-            if not math.isfinite(seg_cost):
-                continue
-            seg_touch = count_r1_touches_on_path(blocks, seg)
-
-            next_cost = total_cost + seg_cost
-            next_touch = total_touch + seg_touch
-            if best:
-                if next_cost > best["totalCost"]:
-                    continue
-                if next_cost == best["totalCost"] and next_touch >= best["totalTouch"]:
-                    continue
-            dfs(idx + 1, anchor, parts + [seg], next_cost, next_touch)
-
-    dfs(0, start_node, [], 0.0, 0)
-    return best
-
-
-def find_nearest_pickup_from_entrance(blocks, targets):
-    best_target = None
-    best_cost = math.inf
-    for t in targets:
-        for a in get_pickup_anchors(t):
-            seg = shortest_path(blocks, "E", a)
-            if not seg:
-                continue
-            if not can_pickup_from(a, t):
-                continue
-            c = path_cost(blocks, seg)
-            if c < best_cost:
-                best_cost = c
-                best_target = t
-    return best_target
-
-
-def encounter_order_along_route(blocks, route):
-    order = []
-    seen = set()
-    for node in route:
-        for t in get_adjacent_r2_targets(blocks, node):
-            if t not in seen:
-                seen.add(t)
-                order.append(t)
-    return order
-
-
-def combine_paths(parts):
-    result = []
-    for idx, seg in enumerate(parts):
-        if not seg:
-            continue
-        if idx == 0:
-            result.extend(seg)
-        else:
-            result.extend(seg[1:])
-    return result
-
-
-def validate_layout(blocks, strict=True):
-    errors = []
-    counts = {"R2": 0, "R1": 0, "FAKE": 0}
-
-    for b in blocks:
-        if b["token"] == "R2":
-            counts["R2"] += 1
-        if b["token"] == "R1":
-            counts["R1"] += 1
-            if b["id"] in FORBIDDEN_R1_BLOCKS:
-                errors.append(f"R1 KFS cannot be placed on block {b['id']}.")
-        if b["token"] == "FAKE":
-            counts["FAKE"] += 1
-            if b["id"] in [1, 2, 3]:
-                errors.append("Fake KFS cannot be placed on entrance blocks 1,2,3.")
-
-    if strict:
-        if counts["R2"] != 4:
-            errors.append("R2 KFS count must be exactly 4.")
-        if counts["R1"] != 3:
-            errors.append("R1 KFS count must be exactly 3.")
-        if counts["FAKE"] != 1:
-            errors.append("Fake KFS count must be exactly 1.")
-    else:
-        if counts["R2"] < 1:
-            errors.append("Need at least 1 R2 KFS for planning.")
-
-    return {"ok": len(errors) == 0, "errors": errors, "counts": counts}
-
-
-def min_hop_distance(start, goal_nodes):
-    if start in goal_nodes:
-        return 0
-    q = [(start, 0)]
-    visited = {start}
-    while q:
-        node, d = q.pop(0)
-        for nb in get_neighbors(node):
-            if nb in visited:
-                continue
-            if nb in goal_nodes:
-                return d + 1
-            visited.add(nb)
-            q.append((nb, d + 1))
-    return 99
-
-
-def evaluate_plan(blocks, route, pickups, planning_mode="practical", scenario_label=""):
-    steps = 0
-    climb = 0
-    risky_edges = 0
-    climb_actions = 0
-    descend_actions = 0
-    pickup_actions = 0
-    drop_actions = 0
-    wait_actions = 0
-    grip_occupied = False
-
-    r1_touch_count = 0
-    r1_near_count = 0
-    r1_proximity_cost = 0
-    policy_drop_actions = 0
-    policy_penalty = 0
-
-    for i in range(1, len(route)):
-        from_node = route[i - 1]
-        to_node = route[i]
-        mv = validate_move(blocks, from_node, to_node)
-        if not mv["ok"]:
-            return {"valid": False, "reason": mv["reason"]}
-
-        steps += 1
-        delta = get_height(blocks, to_node) - get_height(blocks, from_node)
-        climb += max(0, delta)
-        if delta > 0:
-            climb_actions += 1
-        if delta < 0:
-            descend_actions += 1
-        if mv["dh"] == 200:
-            risky_edges += 1
-
-    r1_blocks = [b["id"] for b in blocks if b["token"] == "R1"]
-    if r1_blocks:
-        for node in route:
-            d = min_hop_distance(node, r1_blocks)
-            if d == 0:
-                r1_touch_count += 1
-                wait_actions += 1
-            if d == 1:
-                r1_near_count += 1
-            if d <= R1_AVOID_RADIUS:
-                r1_proximity_cost += (R1_AVOID_RADIUS + 1 - d)
-
-    for _ in pickups:
-        if grip_occupied:
-            drop_actions += 1
-            grip_occupied = False
-        pickup_actions += 1
-        grip_occupied = True
-
-    if planning_mode == "strict":
-        encounter = encounter_order_along_route(blocks, route)
-        if encounter and pickups:
-            preferred_first = encounter[0]
-            preferred_last = encounter[-1]
-            nearest_from_entry = find_nearest_pickup_from_entrance(blocks, encounter) or preferred_first
-
-            if pickups[0] != preferred_first and pickups[0] != nearest_from_entry:
-                policy_penalty += 8
-            if pickups[-1] != preferred_last:
-                policy_penalty += 6
-
-            for p in pickups:
-                if p != preferred_first and p != preferred_last:
-                    policy_drop_actions += 1
-
-        drop_actions += policy_drop_actions
-
-    terrain_actions = climb_actions + descend_actions
-    ops = pickup_actions + drop_actions + wait_actions + terrain_actions
-    pickup_time = pickup_actions * 0.8 + drop_actions * 0.6
-    wait_time = wait_actions * 1.4
-    move_time = steps * 1.2
-    time_s = round(pickup_time + wait_time + move_time, 2)
-    energy = round(steps * 0.1 + climb * 0.002, 2)
-    one_scroll_penalty = 10 if len(pickups) == 1 else 0
-    strategic_exit_points = 8 if planning_mode == "strict" and route[-1] == 10 else 0
-
-    exit_block = route[-1]
-    exit_block_obj = get_block(blocks, exit_block)
-    has_exit_pickup = exit_block in pickups
-    exit_pickup_points = 7 if exit_block_obj and exit_block_obj["token"] == "R2" and has_exit_pickup else 0
-    missed_exit_pick_penalty = 7 if exit_block_obj and exit_block_obj["token"] == "R2" and not has_exit_pickup else 0
-
-    risk = round(risky_edges * 1.5 + drop_actions * 1.2 + wait_actions * 1.4 + r1_proximity_cost * 1.6, 2)
-    mode_is_practical = planning_mode == "practical"
-    op_weight = 4.5 if mode_is_practical else 2.5
-    risk_weight = 1.3 if mode_is_practical else 1.8
-
-    wait_drop_penalty = wait_actions * 4 + drop_actions * 3
-    score = round(
-        time_s * 1
-        + risk * risk_weight
-        + steps * 0.3
-        + energy * 0.7
-        + ops * op_weight
-        + wait_drop_penalty
-        + one_scroll_penalty
-        + missed_exit_pick_penalty
-        + policy_penalty
-        - strategic_exit_points
-        - exit_pickup_points,
-        2,
-    )
-
-    return {
-        "valid": True,
-        "scenarioLabel": scenario_label,
-        "route": route,
-        "pickups": pickups,
-        "exit": route[-1],
-        "steps": steps,
-        "climb": climb,
-        "time": time_s,
-        "energy": energy,
-        "risk": risk,
-        "pickupActions": pickup_actions,
-        "dropActions": drop_actions,
-        "waitActions": wait_actions,
-        "climbActions": climb_actions,
-        "descendActions": descend_actions,
-        "terrainActions": terrain_actions,
-        "ops": ops,
-        "waitDropActions": wait_actions + drop_actions,
-        "waitDropPenalty": wait_drop_penalty,
-        "r1TouchCount": r1_touch_count,
-        "r1NearCount": r1_near_count,
-        "r1ProximityCost": round(r1_proximity_cost, 2),
-        "policyDropActions": policy_drop_actions,
-        "policyPenalty": policy_penalty,
-        "oneScrollPenalty": one_scroll_penalty,
-        "strategicExitPoints": strategic_exit_points,
-        "exitPickupPoints": exit_pickup_points,
-        "missedExitPickupPenalty": missed_exit_pick_penalty,
-        "score": score,
-    }
-
-
-def compute_plans(blocks, top_n=5, planning_mode="practical"):
-    r2_blocks = [b["id"] for b in blocks if b["token"] == "R2"]
-    if not r2_blocks:
+def parse_csv_ids(raw: str):
+    raw = (raw or "").strip()
+    if not raw:
         return []
-
-    target_sets = []
-    preferred_sizes = [2, 1] if len(r2_blocks) >= 2 else [1]
-    for size in preferred_sizes:
-        target_sets.extend(itertools.combinations(r2_blocks, size))
-
-    plans = []
-
-    for targets in target_sets:
-        for order in itertools.permutations(targets):
-            for exit_block in EXIT_BLOCKS:
-                exit_obj = get_block(blocks, exit_block)
-                if exit_obj and exit_obj["token"] == "R2" and exit_block not in order:
-                    continue
-
-                current = "E"
-                parts = []
-                pickup_plan = plan_pickup_sequence(blocks, current, list(order))
-                if not pickup_plan:
-                    continue
-                parts.extend(pickup_plan["parts"])
-                current = pickup_plan["endNode"]
-
-                exit_seg = shortest_path(blocks, current, exit_block)
-                if not exit_seg:
-                    continue
-                if not validate_exit_boundary(blocks, exit_block)["ok"]:
-                    continue
-                parts.append(exit_seg)
-
-                full_route = combine_paths(parts)
-                if full_route[-1] not in EXIT_BLOCKS:
-                    continue
-
-                pl = evaluate_plan(blocks, full_route, list(order), planning_mode=planning_mode)
-                if pl["valid"]:
-                    plans.append(pl)
-
-    def sort_key(p):
-        if planning_mode == "practical":
-            return (p["waitDropActions"], p["ops"], p["score"])
-        return (p["score"],)
-
-    plans.sort(key=sort_key)
-
-    unique = []
-    seen = set()
-    for p in plans:
-        key = (tuple(p["route"]), tuple(p["pickups"]))
-        if key in seen:
+    out = []
+    for p in raw.split(","):
+        t = p.strip()
+        if not t:
             continue
-        seen.add(key)
-        unique.append(p)
-
-    two_scroll = [p for p in unique if len(p["pickups"]) == 2]
-    if two_scroll:
-        return two_scroll[:top_n]
-    return unique[:top_n]
-
-
-def random_scenario_blocks():
-    blocks = create_default_blocks()
-    for b in blocks:
-        b["token"] = "EMPTY"
-
-    ids = [b["id"] for b in blocks]
-    random.shuffle(ids)
-
-    for bid in ids[:4]:
-        get_block(blocks, bid)["token"] = "R2"
-
-    remaining = [bid for bid in ids if get_block(blocks, bid)["token"] == "EMPTY"]
-    r1_candidates = [bid for bid in remaining if bid not in FORBIDDEN_R1_BLOCKS]
-    for bid in r1_candidates[:3]:
-        get_block(blocks, bid)["token"] = "R1"
-
-    rem2 = [bid for bid in ids if get_block(blocks, bid)["token"] == "EMPTY"]
-    fake_candidates = [bid for bid in rem2 if bid not in [1, 2, 3]]
-    if fake_candidates:
-        get_block(blocks, fake_candidates[0])["token"] = "FAKE"
-
-    return blocks
+        if not t.isdigit():
+            raise ValueError(f"Invalid block id: {t}")
+        bid = int(t)
+        if bid < 1 or bid > 12:
+            raise ValueError(f"Block id out of range: {bid}")
+        out.append(bid)
+    return sorted(out)
 
 
-def color_by_height(h):
-    if h == 200:
-        return "rgb(41,82,16)"
-    if h == 400:
-        return "rgb(42,113,56)"
-    return "rgb(152,166,80)"
+def token_at(layout: Layout, bid: int) -> str:
+    if bid in set(layout.r2_blocks):
+        return "R2"
+    if bid in set(layout.r1_blocks):
+        return "R1"
+    if bid in set(layout.fake_blocks):
+        return "FAKE"
+    return "EMPTY"
 
 
-def render_map(blocks, path):
-    path = path or []
-    path_set = set(path)
+def render_field_spec():
+    st.markdown("**Field Spec (Rulebook-like)**")
+    st.caption("Grid 3x4 | Entrance blocks: 2 | Exit blocks: 10,12")
+    st.caption("Heights only: 200/400/600mm | Color legend follows Meihua standard RGB")
+
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.markdown(
+            '<div style="background:rgb(41,82,16);padding:10px;border-radius:8px;color:white;text-align:center;">200mm</div>',
+            unsafe_allow_html=True,
+        )
+    with c2:
+        st.markdown(
+            '<div style="background:rgb(42,113,56);padding:10px;border-radius:8px;color:white;text-align:center;">400mm</div>',
+            unsafe_allow_html=True,
+        )
+    with c3:
+        st.markdown(
+            '<div style="background:rgb(152,166,80);padding:10px;border-radius:8px;color:#111;text-align:center;">600mm</div>',
+            unsafe_allow_html=True,
+        )
+
+
+def render_meihua_map(layout: Layout, route=None):
+    route = route or []
+    route_index = {b: i + 1 for i, b in enumerate(route)}
+    route_set = set(route)
 
     html = [
         """
         <style>
-        .map-grid {display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
-        .cell {border:1px solid #6f9e54; border-radius:10px; min-height:90px; padding:6px; color:#f6fff2; position:relative;}
-        .cell.dimmed {opacity:0.3; filter:saturate(0.6);}
-        .cell.path {outline:6px solid #0b4ea2; outline-offset:-3px; box-shadow:0 0 0 4px rgba(11,78,162,0.34),0 0 22px rgba(11,78,162,0.55);}
-        .cell.start {outline-color:#0d8f46;}
-        .cell.end {outline-color:#bf1020;}
-        .kfs {position:absolute; right:6px; bottom:6px; font-size:11px; border-radius:6px; padding:2px 6px; color:#fff; background:#63755b;}
-        .step {position:absolute; left:6px; bottom:6px; width:22px; height:22px; border-radius:50%; background:#0f4c9a; text-align:center; line-height:22px; font-size:12px; font-weight:700;}
-        .title {font-weight:700;}
-        .sub {font-size:12px;}
+          .mf-wrap {border:1px solid #263145; border-radius:14px; padding:12px; background:#0b1020;}
+          .mf-grid {display:grid; grid-template-columns:repeat(3, minmax(120px,1fr)); gap:8px;}
+          .mf-cell {
+            position:relative; min-height:96px; border-radius:10px; border:1px solid rgba(255,255,255,0.20);
+            padding:8px; color:#f6f7fb; overflow:hidden;
+          }
+          .mf-title {font-weight:800; font-size:14px;}
+          .mf-sub {font-size:12px; opacity:0.94;}
+          .mf-badge {
+            position:absolute; right:8px; bottom:8px; font-size:11px; font-weight:700;
+            border-radius:999px; padding:2px 8px; background:rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.35);
+          }
+          .mf-step {
+            position:absolute; left:8px; bottom:8px; width:24px; height:24px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; background:#1c63d5; color:white; font-weight:800;
+          }
+          .mf-route {outline:3px solid #45a5ff; outline-offset:-2px;}
+          .mf-entry {box-shadow:inset 0 0 0 2px #0ae593;}
+          .mf-exit {box-shadow:inset 0 0 0 2px #ff8963;}
         </style>
         """
     ]
-    html.append('<div class="map-grid">')
-    for b in blocks:
-        cls = ["cell"]
-        if path and b["id"] not in path_set:
-            cls.append("dimmed")
-        if b["id"] in path_set:
-            cls.append("path")
-            idx = path.index(b["id"])
-            if idx == 0:
-                cls.append("start")
-            if idx == len(path) - 1:
-                cls.append("end")
-        title = f"#{b['id']}"
-        if b["id"] in ENTRANCE_LINKS:
-            title += " (Ent)"
-        if b["id"] in EXIT_BLOCKS:
-            title += " (Exit)"
+    html.append('<div class="mf-wrap"><div class="mf-grid">')
 
-        step_badge = ""
-        if b["id"] in path_set:
-            step_badge = f'<div class="step">{path.index(b["id"]) + 1}</div>'
+    exit_blocks = {10, 12}
+    for bid in range(1, 13):
+        token = token_at(layout, bid)
+        cls = ["mf-cell"]
+        if bid in route_set:
+            cls.append("mf-route")
+        if bid in set(ENTRANCE_BLOCKS):
+            cls.append("mf-entry")
+        if bid in exit_blocks:
+            cls.append("mf-exit")
+
+        title_parts = [f"#{bid}"]
+        if bid in set(ENTRANCE_BLOCKS):
+            title_parts.append("ENT")
+        if bid in exit_blocks:
+            title_parts.append("EXIT")
+
+        step_html = f'<div class="mf-step">{route_index[bid]}</div>' if bid in route_index else ""
 
         html.append(
-            f'<div class="{" ".join(cls)}" style="background:{color_by_height(b["h"])};">'
-            f'<div class="title">{title}</div>'
-            f'<div class="sub">H={b["h"]}mm</div>'
-            f'<div class="kfs">{b["token"]}</div>'
-            f"{step_badge}"
+            f'<div class="{" ".join(cls)}" style="background:{HEIGHT_COLORS[layout.heights[bid]]};">'
+            f'<div class="mf-title">{" | ".join(title_parts)}</div>'
+            f'<div class="mf-sub">H={layout.heights[bid]}mm</div>'
+            f'<div class="mf-badge">{token}</div>'
+            f"{step_html}"
             "</div>"
         )
 
-    html.append("</div>")
+    html.append("</div></div>")
     st.markdown("".join(html), unsafe_allow_html=True)
 
 
-def show_plan_detail(plan):
-    st.markdown(f"**Route:** E -> {' -> '.join(map(str, plan['route']))}")
-    st.markdown(f"**Pickups:** {', '.join(map(str, plan['pickups'])) if plan['pickups'] else '-'} | **Exit:** {plan['exit']}")
+def random_valid_layout(cfg: PlannerConfig, max_tries: int = 2000):
+    all_blocks = list(range(1, 13))
+    entrance_set = {1, 2, 3}
+    r1_pool = list(cfg.official.legal_r1_boundary_blocks)
+
+    for _ in range(max_tries):
+        r1 = sorted(random.sample(r1_pool, 3))
+        occupied = set(r1)
+
+        fake_pool = [b for b in all_blocks if b not in entrance_set and b not in occupied]
+        if not fake_pool:
+            continue
+        fake = random.choice(fake_pool)
+        occupied.add(fake)
+
+        r2_pool = [b for b in all_blocks if b not in occupied]
+        if len(r2_pool) < 4:
+            continue
+        r2 = sorted(random.sample(r2_pool, 4))
+
+        layout = Layout.from_lists(r2_blocks=r2, r1_blocks=r1, fake_blocks=[fake], heights=DEFAULT_HEIGHTS)
+        ok, _ = validate_layout(layout, cfg, strict_counts=True)
+        if ok:
+            return layout
+
+    return None
+
+
+def generate_layout_candidates(
+    base_r2, base_r1, base_fake, cfg: PlannerConfig, max_candidates: int = 40000
+):
+    need_r2 = 4 - len(base_r2)
+    need_r1 = 3 - len(base_r1)
+    need_fake = 1 - len(base_fake)
+    if need_r2 < 0 or need_r1 < 0 or need_fake < 0:
+        return []
+
+    occupied = set(base_r2) | set(base_r1) | set(base_fake)
+    unknown = sorted(set(range(1, 13)) - occupied)
+    legal_r1 = set(cfg.official.legal_r1_boundary_blocks)
+    entrance_set = set(ENTRANCE_BLOCKS)
+
+    out = []
+    for add_r2 in combinations(unknown, need_r2):
+        rem_after_r2 = [b for b in unknown if b not in set(add_r2)]
+        r1_pool = [b for b in rem_after_r2 if b in legal_r1]
+        for add_r1 in combinations(r1_pool, need_r1):
+            rem_after_r1 = [b for b in rem_after_r2 if b not in set(add_r1)]
+            fake_pool = [b for b in rem_after_r1 if b not in entrance_set]
+            for add_fake in combinations(fake_pool, need_fake):
+                layout = Layout.from_lists(
+                    r2_blocks=list(base_r2) + list(add_r2),
+                    r1_blocks=list(base_r1) + list(add_r1),
+                    fake_blocks=list(base_fake) + list(add_fake),
+                    heights=DEFAULT_HEIGHTS,
+                )
+                ok, _ = validate_layout(layout, cfg, strict_counts=True)
+                if ok:
+                    out.append(layout)
+                    if len(out) >= max_candidates:
+                        return out
+    return out
+
+
+def infer_best_plan_for_incomplete_layout(
+    base_r2, base_r1, base_fake, cfg: PlannerConfig, mode: str, top_n: int
+):
+    candidates = generate_layout_candidates(base_r2, base_r1, base_fake, cfg)
+    best_layout = None
+    best_plan = None
+    best_score = float("inf")
+
+    for layout in candidates:
+        plans = plan_routes(layout, cfg, top_n=1, mode=mode)
+        if not plans:
+            continue
+        p = plans[0]
+        if (p.score, p.steps) < (best_score, getattr(best_plan, "steps", 10**9)):
+            best_score = p.score
+            best_plan = p
+            best_layout = layout
+
+    if best_layout is None:
+        return None, []
+    return best_layout, plan_routes(best_layout, cfg, top_n=top_n, mode=mode)
+
+
+def render_strategy_controls(prefix: str, default_min_pickups: int = 2) -> StrategyPreferences:
+    st.markdown("**Action Scoring (Adjustable)**")
+    s1, s2, s3 = st.columns(3)
+    with s1:
+        min_pickups_required = st.number_input(
+            "Minimum R2 pickups (hard rule)",
+            min_value=1,
+            max_value=2,
+            value=default_min_pickups,
+            step=1,
+            key=f"{prefix}_min_pickups_required",
+        )
+        step_weight = st.number_input(
+            "Step weight",
+            min_value=0.0,
+            max_value=20.0,
+            value=1.5,
+            step=0.5,
+            key=f"{prefix}_step_weight",
+        )
+        pickup_weight = st.number_input(
+            "Pickup action weight",
+            min_value=0.0,
+            max_value=20.0,
+            value=4.0,
+            step=0.5,
+            key=f"{prefix}_pickup_weight",
+        )
+    with s2:
+        drop_weight = st.number_input(
+            "Drop action weight",
+            min_value=0.0,
+            max_value=20.0,
+            value=4.0,
+            step=0.5,
+            key=f"{prefix}_drop_weight",
+        )
+        turn_weight = st.number_input(
+            "Turn action weight",
+            min_value=0.0,
+            max_value=20.0,
+            value=4.0,
+            step=0.5,
+            key=f"{prefix}_turn_weight",
+        )
+        wait_weight = st.number_input(
+            "Wait action weight",
+            min_value=0.0,
+            max_value=20.0,
+            value=4.0,
+            step=0.5,
+            key=f"{prefix}_wait_weight",
+        )
+    with s3:
+        one_scroll_penalty = st.number_input(
+            "One-scroll penalty",
+            min_value=0.0,
+            max_value=100.0,
+            value=30.0,
+            step=1.0,
+            key=f"{prefix}_one_scroll_penalty",
+        )
+        strict_exit10_bonus = st.number_input(
+            "Strict mode exit#10 bonus",
+            min_value=0.0,
+            max_value=20.0,
+            value=3.0,
+            step=0.5,
+            key=f"{prefix}_strict_exit10_bonus",
+        )
+        strict_exit12_bonus = st.number_input(
+            "Strict mode exit#12 bonus",
+            min_value=0.0,
+            max_value=20.0,
+            value=0.0,
+            step=0.5,
+            key=f"{prefix}_strict_exit12_bonus",
+        )
+
+    return StrategyPreferences(
+        prefer_two_pickups=True,
+        practical_sort_wait_drop_first=True,
+        min_pickups_required=int(min_pickups_required),
+        step_weight=float(step_weight),
+        pickup_weight=float(pickup_weight),
+        drop_weight=float(drop_weight),
+        turn_weight=float(turn_weight),
+        wait_weight=float(wait_weight),
+        one_scroll_penalty=float(one_scroll_penalty),
+        strict_exit10_bonus=float(strict_exit10_bonus),
+        strict_exit12_bonus=float(strict_exit12_bonus),
+    )
+
+
+def run_manual_planner_tab():
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        r2_text = st.text_input("R2 blocks", value="1,3,5,8")
+    with c2:
+        r1_text = st.text_input("R1 blocks", value="10,11,12")
+    with c3:
+        fake_text = st.text_input("Fake block", value="6")
+
+    c4, c5 = st.columns(2)
+    with c4:
+        mode = st.selectbox("Planning mode", ["practical", "strict"], index=0, key="manual_mode")
+    with c5:
+        top_n = st.number_input("Top N plans", min_value=1, max_value=20, value=5, step=1, key="manual_top")
+    strategy = render_strategy_controls(prefix="manual", default_min_pickups=2)
+
+    if "last_layout" not in st.session_state:
+        st.session_state.last_layout = Layout.from_lists([1, 3, 5, 8], [10, 11, 12], [6], DEFAULT_HEIGHTS)
+    if "last_plans" not in st.session_state:
+        st.session_state.last_plans = []
+
+    if st.button("Validate + Plan", key="manual_run"):
+        try:
+            r2_list = parse_csv_ids(r2_text)
+            r1_list = parse_csv_ids(r1_text)
+            fake_list = parse_csv_ids(fake_text)
+            layout = Layout.from_lists(r2_blocks=r2_list, r1_blocks=r1_list, fake_blocks=fake_list)
+        except ValueError as e:
+            st.error(str(e))
+            return
+
+        cfg = replace(PlannerConfig(), strategy=strategy)
+        ok_partial, partial_errors = validate_layout(layout, cfg, strict_counts=False)
+        if not ok_partial:
+            st.session_state.last_plans = []
+            st.error("Layout invalid")
+            for e in partial_errors:
+                st.write(f"- {e}")
+            return
+
+        is_complete = len(r2_list) == 4 and len(r1_list) == 3 and len(fake_list) == 1
+        if is_complete:
+            ok, errors = validate_layout(layout, cfg, strict_counts=True)
+            st.session_state.last_layout = layout
+            if not ok:
+                st.session_state.last_plans = []
+                st.error("Layout invalid")
+                for e in errors:
+                    st.write(f"- {e}")
+            else:
+                st.success("Layout valid")
+                plans = plan_routes(layout, cfg, top_n=int(top_n), mode=mode)
+                st.session_state.last_plans = plans
+                if not plans:
+                    st.warning("No legal plan found for this layout")
+        else:
+            st.info("Incomplete layout detected. Predicting most likely completion and best path...")
+            inferred_layout, plans = infer_best_plan_for_incomplete_layout(
+                r2_list, r1_list, fake_list, cfg, mode=mode, top_n=int(top_n)
+            )
+            if inferred_layout is None or not plans:
+                st.session_state.last_plans = []
+                st.warning("Could not infer a feasible completion from current partial blocks")
+            else:
+                st.session_state.last_layout = inferred_layout
+                st.session_state.last_plans = plans
+                best = plans[0]
+                st.success("Predicted most likely layout + best path")
+                st.caption(
+                    f"Inferred layout: R2={list(inferred_layout.r2_blocks)} | "
+                    f"R1={list(inferred_layout.r1_blocks)} | Fake={list(inferred_layout.fake_blocks)}"
+                )
+                st.caption(
+                    f"Best predicted path: E->{ '->'.join(map(str, best.route)) } | "
+                    f"exit={best.exit_block} | pickups={best.pickups} | score={best.score}"
+                )
+
+    layout = st.session_state.last_layout
+    plans = st.session_state.last_plans
+
+    st.subheader("Meihua Forest Map")
+    selected_route = []
+    if plans:
+        labels = [
+            f"#{i+1} score={p.score} route=E->{ '->'.join(map(str, p.route)) } pickups={p.pickups}"
+            for i, p in enumerate(plans)
+        ]
+        pick = st.radio("Select plan", range(len(plans)), format_func=lambda i: labels[i], index=0)
+        chosen = plans[pick]
+        selected_route = chosen.route
+
+        st.markdown(
+            f"**Selected:** exit={chosen.exit_block} | steps={chosen.steps} | "
+            f"pickup={chosen.pickup_actions} | drop={chosen.drop_actions} | "
+            f"wait={chosen.wait_actions} | turn180={chosen.turn_actions} | score={chosen.score}"
+        )
+
+    render_meihua_map(layout, selected_route)
+
+
+def run_scenario_generator_tab():
+    st.subheader("Scenario Generator")
+    st.caption("Generate many rule-valid layouts, compute legal plans, then inspect all or worst-ranked scenarios.")
+
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        samples = st.number_input("Scenarios to sample", min_value=10, max_value=3000, value=300, step=10)
+    with c2:
+        worst_n = st.number_input("Worst cases to keep", min_value=1, max_value=50, value=10, step=1)
+    with c3:
+        mode = st.selectbox("Planning mode", ["practical", "strict"], index=0, key="worst_mode")
+    strategy = render_strategy_controls(prefix="scenario", default_min_pickups=2)
+
+    if "scenario_rows" not in st.session_state:
+        st.session_state.scenario_rows = []
+        st.session_state.worst_cases = []
+        st.session_state.worst_stats = None
+
+    if st.button("Generate Scenarios", key="gen_worst"):
+        cfg = replace(PlannerConfig(), strategy=strategy)
+        rows = []
+        valid_layouts = 0
+        infeasible = 0
+
+        progress = st.progress(0, text="Generating scenarios...")
+        for i in range(int(samples)):
+            layout = random_valid_layout(cfg)
+            if not layout:
+                continue
+            valid_layouts += 1
+
+            plans = plan_routes(layout, cfg, top_n=20, mode=mode)
+            if not plans:
+                infeasible += 1
+                continue
+
+            best = plans[0]
+            rows.append(
+                {
+                    "layout": layout,
+                    "best": best,
+                }
+            )
+
+            if (i + 1) % 10 == 0 or i == int(samples) - 1:
+                progress.progress(int((i + 1) * 100 / int(samples)), text=f"Processed {i+1}/{int(samples)}")
+
+        rows.sort(
+            key=lambda x: (
+                x["best"].score,
+                x["best"].wait_actions,
+                x["best"].drop_actions,
+                x["best"].steps,
+            ),
+            reverse=True,
+        )
+
+        st.session_state.scenario_rows = rows
+        st.session_state.worst_cases = rows[: int(worst_n)]
+        st.session_state.worst_stats = {
+            "sampled": int(samples),
+            "valid_layouts": valid_layouts,
+            "feasible": len(rows),
+            "infeasible": infeasible,
+        }
+
+    stats = st.session_state.worst_stats
+    all_cases = st.session_state.scenario_rows
+    worst_cases = st.session_state.worst_cases
+
+    if stats:
+        st.info(
+            f"Sampled={stats['sampled']} | Valid layouts={stats['valid_layouts']} | "
+            f"Feasible={stats['feasible']} | Infeasible(no legal plan)={stats['infeasible']}"
+        )
+
+    if not all_cases:
+        st.caption("No scenario results yet. Click Generate Scenarios.")
+        return
+
+    view_mode = st.radio(
+        "View mode",
+        ["All feasible scenarios", "Worst-only view"],
+        index=0,
+        horizontal=True,
+        key="scenario_view_mode",
+    )
+    cases = all_cases if view_mode == "All feasible scenarios" else worst_cases
+
+    labels = []
+    for i, row in enumerate(cases, start=1):
+        p = row["best"]
+        labels.append(
+            f"#{i} score={p.score} route=E->{ '->'.join(map(str, p.route)) } "
+            f"pickups={p.pickups} waits={p.wait_actions} drops={p.drop_actions}"
+        )
+
+    idx = st.radio("Select scenario", range(len(cases)), format_func=lambda i: labels[i], index=0)
+    picked = cases[idx]
+    layout = picked["layout"]
+    plan = picked["best"]
+
     st.markdown(
-        f"**Steps:** {plan['steps']} | **Climb:** {plan['climb']}mm | "
-        f"**Time:** {plan['time']}s | **Risk:** {plan['risk']}"
+        f"**Scenario detail:** exit={plan.exit_block} | steps={plan.steps} | "
+        f"pickup={plan.pickup_actions} | drop={plan.drop_actions} | wait={plan.wait_actions} | "
+        f"turn180={plan.turn_actions} | score={plan.score}"
     )
     st.markdown(
-        f"**Actions:** pickup={plan['pickupActions']}, drop={plan['dropActions']}, wait={plan['waitActions']}, "
-        f"climb={plan['climbActions']}, descend={plan['descendActions']}, terrain={plan['terrainActions']}, total={plan['ops']}"
-    )
-    st.markdown(
-        f"**Wait+Drop:** {plan['waitDropActions']} (penalty {plan['waitDropPenalty']}) | "
-        f"**Score:** {plan['score']}"
+        f"**Layout:** R2={list(layout.r2_blocks)} | R1={list(layout.r1_blocks)} | Fake={list(layout.fake_blocks)}"
     )
 
-
-def seed_manual_default(blocks):
-    for b in blocks:
-        b["token"] = "EMPTY"
-    get_block(blocks, 1)["token"] = "R2"
-    get_block(blocks, 3)["token"] = "R2"
-    get_block(blocks, 6)["token"] = "R2"
-    get_block(blocks, 11)["token"] = "R2"
-    get_block(blocks, 2)["token"] = "R1"
-    get_block(blocks, 4)["token"] = "R1"
-    get_block(blocks, 8)["token"] = "R1"
-    get_block(blocks, 12)["token"] = "FAKE"
-
-
-def init_state():
-    if "manual_blocks" not in st.session_state:
-        st.session_state.manual_blocks = create_default_blocks()
-        seed_manual_default(st.session_state.manual_blocks)
-    if "manual_plans" not in st.session_state:
-        st.session_state.manual_plans = []
-    if "auto_blocks" not in st.session_state:
-        st.session_state.auto_blocks = create_default_blocks()
-    if "auto_plans" not in st.session_state:
-        st.session_state.auto_plans = []
+    render_meihua_map(layout, plan.route)
 
 
 def main():
-    st.set_page_config(page_title="Meihua Forest Planner (Python)", layout="wide")
-    init_state()
+    st.set_page_config(page_title="Meihua Planner (Rulebook UI)", layout="wide")
+    st.title("Meihua Planner (Backend-first Minimal UI)")
+    st.caption("Rulebook-style map view: 3x4 forest blocks, official entrance/exit markers, and route overlay.")
 
-    st.title("Meihua Forest Planner (Python)")
-    st.caption("Robocon 2026 - rule-aware path planning")
+    render_field_spec()
 
-    planning_mode = st.selectbox(
-        "Planning Mode",
-        ["practical", "strict"],
-        index=0,
-        help="Practical mode prioritizes lower wait/drop and total actions.",
-    )
-
-    tabs = st.tabs(["Auto Optimize", "Manual Layout + Plan"])
-
+    tabs = st.tabs(["Manual Layout + Plan", "Scenario Generator"])
     with tabs[0]:
-        c1, c2, c3 = st.columns(3)
-        with c1:
-            scenarios = st.number_input("Scenarios", min_value=1, max_value=200, value=30, step=1)
-        with c2:
-            top_n = st.number_input("Top Plans", min_value=1, max_value=20, value=5, step=1)
-        with c3:
-            strict_layout = st.checkbox("Strict Layout", value=True)
-
-        if st.button("Generate + Compute", key="auto_run"):
-            all_plans = []
-            for i in range(int(scenarios)):
-                blocks = random_scenario_blocks()
-                lv = validate_layout(blocks, strict_layout)
-                if not lv["ok"]:
-                    continue
-                plans = compute_plans(blocks, int(top_n), planning_mode)
-                for p in plans:
-                    p["scenarioLabel"] = f"S{i + 1}"
-                    p["_blocks"] = clone_blocks(blocks)
-                all_plans.extend(plans)
-
-            all_plans.sort(key=lambda p: p["score"])
-            st.session_state.auto_plans = all_plans[: int(top_n)]
-            if st.session_state.auto_plans:
-                st.session_state.auto_blocks = clone_blocks(st.session_state.auto_plans[0]["_blocks"])
-
-        auto_plans = st.session_state.auto_plans
-        if auto_plans:
-            st.success(
-                f"Computed {len(auto_plans)} plan(s). Best score: {auto_plans[0]['score']} | "
-                f"Scenario {auto_plans[0].get('scenarioLabel', '-') }"
-            )
-            labels = [
-                f"#{i+1} score={p['score']} route=E->{'->'.join(map(str,p['route']))} pickups={p['pickups']}"
-                for i, p in enumerate(auto_plans)
-            ]
-            choice = st.radio("Select plan", range(len(auto_plans)), format_func=lambda i: labels[i], index=0)
-            chosen = auto_plans[choice]
-            st.session_state.auto_blocks = clone_blocks(chosen["_blocks"])
-
-            left, right = st.columns([1.05, 1])
-            with left:
-                st.subheader("Plan Details")
-                show_plan_detail(chosen)
-            with right:
-                st.subheader("Scenario Map")
-                render_map(st.session_state.auto_blocks, chosen["route"])
-        else:
-            st.info("No plans yet. Click Generate + Compute.")
-
+        run_manual_planner_tab()
     with tabs[1]:
-        st.subheader("Manual Token Placement")
-        st.caption("Heights are fixed by field constant. Set token for each block.")
-
-        for row in range(4):
-            cols = st.columns(3)
-            for col in range(3):
-                idx = row * 3 + col
-                b = st.session_state.manual_blocks[idx]
-                with cols[col]:
-                    token = st.selectbox(
-                        f"#{b['id']} (H={b['h']})",
-                        TOKENS,
-                        index=TOKENS.index(b["token"]),
-                        key=f"blk_{b['id']}",
-                    )
-                    b["token"] = token
-
-        m1, m2, m3 = st.columns(3)
-        with m1:
-            manual_top_n = st.number_input("Top plans", min_value=1, max_value=20, value=5, step=1, key="m_top")
-        with m2:
-            manual_strict = st.checkbox("Strict Layout", value=True, key="m_strict")
-        with m3:
-            if st.button("Reset default layout"):
-                st.session_state.manual_blocks = create_default_blocks()
-                seed_manual_default(st.session_state.manual_blocks)
-                st.session_state.manual_plans = []
-                st.rerun()
-
-        cval, cplan = st.columns(2)
-        with cval:
-            if st.button("Validate Layout", key="validate_manual"):
-                lv = validate_layout(st.session_state.manual_blocks, manual_strict)
-                if lv["ok"]:
-                    st.success(
-                        f"Layout valid | R2={lv['counts']['R2']} R1={lv['counts']['R1']} FAKE={lv['counts']['FAKE']}"
-                    )
-                else:
-                    st.error("Layout invalid")
-                    for err in lv["errors"]:
-                        st.write(f"- {err}")
-
-        with cplan:
-            if st.button("Compute Path", key="compute_manual"):
-                lv = validate_layout(st.session_state.manual_blocks, manual_strict)
-                if lv["ok"]:
-                    st.session_state.manual_plans = compute_plans(
-                        st.session_state.manual_blocks, int(manual_top_n), planning_mode
-                    )
-                else:
-                    st.session_state.manual_plans = []
-                    st.error("Layout invalid. Fix errors first.")
-
-        manual_plans = st.session_state.manual_plans
-        left, right = st.columns([1.05, 1])
-        with left:
-            st.subheader("Manual Map")
-            selected_route = manual_plans[0]["route"] if manual_plans else []
-            if manual_plans:
-                label_options = [
-                    f"#{i+1} score={p['score']} route=E->{'->'.join(map(str,p['route']))} pickups={p['pickups']}"
-                    for i, p in enumerate(manual_plans)
-                ]
-                pick_idx = st.radio(
-                    "Select plan",
-                    range(len(manual_plans)),
-                    format_func=lambda i: label_options[i],
-                    index=0,
-                    key="manual_plan_pick",
-                )
-                selected_route = manual_plans[pick_idx]["route"]
-
-            render_map(st.session_state.manual_blocks, selected_route)
-
-        with right:
-            st.subheader("Validation / Plans")
-            if manual_plans:
-                p = manual_plans[st.session_state.get("manual_plan_pick", 0)]
-                show_plan_detail(p)
-            else:
-                st.info("No valid plans found yet.")
+        run_scenario_generator_tab()
 
 
 if __name__ == "__main__":

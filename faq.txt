@@ -1,0 +1,1625 @@
+                ABU
+  Asia-Pacific Robot Contest 2026
+         Hong Kong, China
+
+
+
+
+Frequently Asked Questions (FAQs) - “Kung Fu Quest”
+
+
+                         2 February 2026
+       Asia-Pacific Robot Contest 2026 Hong Kong, China
+
+                      Organising Committee
+
+              [https://www.rthk.hk/aburobocon2026]
+   The FAQs
+         #     Released Date   Summary                                   Approved By
+         1      2025/12/17       - Initial release                   Organizing Committee
+                                 - Clarification of Game Rule
+         2      2026/02/02       - 2nd release                       Organizing Committee
+                                 - Clarification of Game Rule
+                                 - Clarification of FAQ (Feb 2026)
+
+
+
+
+Content page                                                                                2
+Content
+Rulebook Clarification (Dec 2025)
+FAQ Clarification (Feb 2026)
+Section 1 – Game Field (2025/12/17)
+Section 2 – Terms of Reference (2025/12/17), (2026/02/02)
+Section 3 – Game Outline (2025/12/17), (2026/02/02)
+Section 4 -Game Procedure
+ 4.1 (2025/12/17), (2026/02/02)
+ 4.2 (2025/12/17), (2026/02/02)
+ 4.3 (2025/12/17), (2026/02/02)
+ 4.4 (2025/12/17), (2026/02/02)
+ 4.5 (2025/12/17), (2026/02/02)
+Section 5 – End Game
+Section 6 – Scoring Points (2025/12/17), (2026/02/02)
+Section 7 – Deciding the Winner (2025/12/17)
+Section 8 – Violations (2025/12/17), (2026/02/02)
+Section 9 – Retry (2025/12/17), (2026/02/02)
+Section 10 – Disqualifications (2025/12/17), (2026/02/02)
+Section 11 – Teams
+Section 12 – Robots (2025/12/17), (2026/02/02)
+Section 13 – Safety
+Section 14 – Others (2025/12/17), (2026/02/02)
+Section 15 – Material and Colours of the game field
+Section 16 – Texts/ Symbols on KFS (2026/02/02)
+Section Appendix – Appendix (2025/12/17), (2026/02/02)
+
+
+   Content page                                             3
+Rulebook Clarification (Dec 2025)
+                                                                                                                             Update: 2025/12/15
+3     3.8 In the Arena:                                                    3.8 In the Arena:
+      3.8.1 R1 places R1 KFS onto Tic-Tac-Toe Bottom Row slot(s).           3.8.1 R1 places R1 KFS onto Tic-Tac-Toe Bottom Row slot(s)
+      3.8.2 R2 places R2 KFS onto Tic-Tac-Toe Middle Row slot(s).                  individually.
+      3.8.3 R2, carried by R1, places R2 KFS onto Tic-Tac-Toe Top Row       3.8.2 R2 places R2 KFS onto Tic-Tac-Toe Middle Row slot(s)
+              slot(s).                                                             individually.
+                                                                            3.8.3 R2, carried by R1, places R2 KFS onto Tic-Tac-Toe Top Row
+                                                                                   slot(s) perform by R1 and R2 combined.
+4     4.3.9 R1 must exit Martial Club to Meihua Forest with one or          4.3.9 R1 must exit Martial Club to Meihua Forest with one or more
+              more Assembled Weapons                                               Assembled Weapons
+      4.3.10 R2 exits Martial Club to Meihua Forest only after R1           4.3.10 R2 exits Martial Club to Meihua Forest only after R1
+              completely exits.                                                    completely exits.
+                                                                            4.3.9 and 4.3.10 only applies to first exit of Martial Club
+      4.5.1 R1 enters the Arena under one of the following conditions:      4.5.1 R1 enters the Arena under one of the following conditions:
+               4.5.1.1.1 Carrying one or more Assembled Weapons                      4.5.1.1.1 Carrying one or more Assembled Weapons
+                          without any R1 KFS;                                                   without any R1 KFS;
+               4.5.1.1.2 Carrying one or more R1 KFS;                                4.5.1.1.2 Carrying one or more R1 KFS;
+               4.5.1.1.3 Both (a) and (b).                                           4.5.1.1.3 Both (a) and (b).
+                                                                           4.5.1 only applies to first entry of Arena
+      4.5.3 R1 can only use an Assembled Weapon to attempt to               4.5.3 R1 can only use an Assembled Weapon to attempt to remove
+              remove an opponent’s KFS occupying any Tic-Tac-Toe slot.             an opponent’s KFS occupying any Tic-Tac-Toe slot. No part of
+                                                                                   R1, R2, KFS and Assembled Weapon can be used as the
+                                                                                   means of defend team’s KFS from being displaced
+      4.5.6 When a weapon is used, R1 must place all of the Used            4.5.6 When a weapon is used, R1 must place at least the Staff part
+              Weapon in the “Used Weapon Area”, before using the next              of the Used Weapon in the “Used Weapon Area”, before using
+              Assembled Weapon to touch any KFS on the tic-tac-toe                 the next Assembled Weapon to touch any KFS on the tic-tac-
+              slot again.                                                          toe slot again.
+      4.5.12 R2 enters the Arena carrying one or more R2 KFS.               4.5.12 R2 enters the Arena carrying one or more R2 KFS.
+                                                                            4.5.12 only applies to first entry of Arena
+6     6.2 KFS collection: 10 points for each KFS successfully carried into 6.2 KFS collection: 10 points for each KFS successfully carried into
+      Arena by R1 or R2. The robot must completely cross the ramp          Arena by respective robot. The robot must completely cross the
+      entry line to earn points.                                           ramp entry line to earn points.
+
+    Content page                                                                                                                              4
+8     8.7 R1 touches R2 KFS, except in Arena.                     8.7 R1 touches R2 KFS, except in Arena or the dropped R2, Fake KFS
+                                                                  on the R1 Pathway.
+   8.14 R1 fails to dispose a Used Weapon in the Used Weapon Area 8.14 R1 fails to dispose at least the Staff part of a Used Weapon in
+        before using another Assembled Weapon to touch a KFS on        the Used Weapon Area before using another Assembled
+        the Tic-Tac-Toe grid.                                          Weapon to touch a KFS on the Tic-Tac-Toe grid.
+   8.21 A used Weapon is not completely placed inside the Used    8.21 The Staff part of a used Weapon is not completely placed inside
+        Weapon Area.                                                   the Used Weapon Area.
+10 10.6 The use of drones, flying mechanisms, projectiles for      10.6 The use of drones, flying mechanisms, projectiles for
+        locomotion, or any form of aerial movement.                     locomotion, or any form of sustained aerial movement.
+FAQ Clarification (Feb 2026)
+                                                                                                                                 Update: 2026/02/02
+ Item      Original                                                 Clarification
+4.3 g      Spearhead Rack is the common area for both teams. For other
+                                                                    Spearhead Rack and Tic-Tac-Toe Rack are the common areas for both
+           areas, Refer to Rule 8.1 and 8.2.                        teams. For other areas, Refer to Rule 8.1 and 8.2.
+4.4 d      a). No, not a violation if not intentional;              a). No, not a violation. Any KFS affected by another dropped KFS will
+           b). Assembled weapon is the only means to remove         remain as-is.
+           opponent’s KFS from Tic-Tac-Toe and can be used only once;
+                                                                    b). Yes, violation; Unused assembled weapon is the only means to
+                                                                    remove opponent’s KFS from Tic-Tac-Toe and can be used only once;
+4.5 ae No part of R1, R2 and KFS can be used as the means of defend No part of R1, R2 and KFS can be used as the means of defend team’s
+       team’s KFS from being displaced;                             KFS from being displaced; Defensive action is violation, it defined as
+                                                                    any action taken by the robot(s) in preventing its own team’s KFS from
+                                                                    falling out of the Tic-Tac-Toe slot;
+4.5 ah Refer to FAQ 4.3 - h;                                             Refer to FAQ 4.3 - h;
+                                                                         Non-Initiator's KFS: Violation, KFS will return to game player by
+                                                                         referee and retry together with the robot;
+                                                                         Initiator's KFS: Will be restored to its previous state by the Referee if it
+                                                                         was placed on the Tic-Tac-Toe rack; otherwise, it will remain as-is and
+                                                                         can be reused;
+4.5 as Used weapons must be disposed after being used;                   Used weapons require disposal before using another new weapon.
+       Refer to FAQ 4.4 -d;                                              Once the disposal action (i.e. dropping used weapon) has started, it
+                                                                         must be completed else constitutes a violation;
+
+
+    Content page                                                                                                                                    5
+8    aa Violation;                                                       Violation;
+        Assembled weapon is the only means to remove opponent’s          Unused assembled weapon is the only means to remove opponent’s
+        KFS from Tic-Tac-Toe and can be used only once;                  KFS from Tic-Tac-Toe and can be used only once;
+12   p Yes, RF communication is prohibited and other forms of            Yes, dense communication is prohibited.
+        signaling such as light and semaphore are not RF                 Other forms of signaling such as light and semaphore are not dense
+        communication;                                                   communication.
+12   q Not permitted. Robot 2 must be an Automatic Robot. It             Not permitted. Robot 2 must be an Automatic Robot. It should
+        should operate autonomously without manual control once          operate without manual control once the game starts.
+        the game starts.
+12    x Robot 1 is a Manual or Automatic Robot. It can be operated       Robot 1 is a Manual or Automatic Robot. It can be operated
+        manually by a team member or autonomously without                manually by a team member or autonomously without manual
+        manual control;                                                  control;
+        Robot 2 must be an Automatic Robot. It should operate            Robot 2 must be an Automatic Robot. It should operate without
+        autonomously without manual control once the game starts.        manual control once the game starts.
+        Refer to FAQ 12 – w & FAQ 12 – s;                                Refer to FAQ 12 – w & FAQ 12 – s;
+14    e 1) Not permitted; Refer to Rulebook Clarification (Dec 2025) -   1) Not permitted; Refer to Rulebook Clarification (Dec 2025) - 10.6;
+        10.6;                                                            2) Vacuum is not permitted;
+        2) Permitted to use KFS gripping by Vacuum Pads (Suction
+        Cups), please refer to Rule Section 4: Game Procedure;
+
+
+
+
+ Content page                                                                                                                                   6
+Section 1 Game Field
+                                                                                                                              Update: 2025/12/05
+ Item      Rule Questions                                                                          Reply
+ 1 a        1   Where is the operator zone?                                                        2 meter offset area surrounding the game
+                                                                                                   field;
+ 1     b   Fig.1    Seen from Figure 1, after completing the task at MC, R2 can only enter MF Refer to Rule 9.4.1.2;
+                    through the Entrance, pass through the Forest, climb the Ramp through the Exit
+                    Zone, and enter the Arena. If R2 wants to return to the MC from the Arena, it
+                    cannot travel back along this route in the opposite direction. Does this mean
+                    that R2 cannot return to the MC after leaving it?
+
+Section 2 Terms of Reference
+                                                                                                                              Update: 2025/12/05
+ Item      Rule Questions                                                                        Reply
+ 2 a        2   What is the purpose of the 15mm × 150mm strip attached to the bottom surface For Referee recognition, serves as a
+                of the fake KFS? How is it attached                                              marking/identification sign; Staple on the
+                                                                                                 bottom surface of the KFS;
+ 2     b    2   There are only 4 R2 KFS so out of 15 logos, only any 4 distinct will be used per Yes and refer to Rule 4.1.3;
+                team?
+ 2     c    2       will the Fake KFS be announced only on the competition day? If earlier, when? Refer to Rule 16.2.2;
+ 2     d    2       According to the description of "Kung Fu Master" in Section 2, a team can earn Refer to Rule 3.8;
+                    the title of " Kung Fu Master" if it places its 3 KFS in a vertical column or a
+                    diagonal line on the Tic-Tac-Toe Rack. This description does not specify whether
+                    these three KFS are R1 KFS or R2 KFS. However, according to Rule 4.5, at least
+                    two of these 3 KFS must be R2 KFS, correct?
+                                                                                                                              Update: 2026/02/02
+ 2     e    2       is it violance if our weapon is dropped when our robot picking up              Refer to Rule 4.4.9 & FAQ 4.3 - d;
+ 2     f    2       What kind of robots are allowed? Is it restricted to wheeled robots or legged Refer to Rulebook & FAQ Section 12
+                    robots are also allowed for Robot 1 and Robot 2 both with arm to handle spears
+                    and scrolls.
+
+
+
+     Content page                                                                                                                             7
+Section 3 Game Field
+                                                                                                                                            Update:2025/12/04
+Item  Rule                 Questions                                                                            Reply
+3 a 3.3.                   the 8 KFSs were placed by the opposing team members during the setup time.           Staffs and Spearheads are placed by Game
+                           So, are these Staffs and Spearheads also placed on the corresponding racks           field Helper before the set-up time count
+                           during the setup time also?                                                          down begins;
+3 b 3.3.1.                 Rulebook v.1, section 3.3.1 states, "Four staffs are placed in the Staff Rack."      The coupler placed facing up; Refer to FAQ 3 -
+                           However, I couldn't find any description in the rulebook on how these staffs         a;
+                           are placed in the rack. Specifically, is the end of the staff with the coupler
+                           placed facing up or facing down?
+                                                                                                                                            Update:2026/02/02
+3    d     3.6 For
+           moving.
+                           Is it possible for the robots to drop off scrolls purposefully in the arena to use   Robots      are   allowed    to go back;
+           4.5.9/4.5.11/   when solving tiktak phase? Or once the robot enters a particular zone it is not      Refer to Rulebook Clarification (Dec 2025) -
+           4.5.14/4.5.16
+                           allowed to go back?                                                                  4.3.9, 4.3.10 & 4.5.1;
+3    e     3.8             In the Arena zone (tic tac toe), it is written:                                      No; Refer to Rulebook Clarification (Dec 2025)
+                           3.8.2. R2 places R2 KFS onto Tic-Tac-Toe Middle Row slot(s).                         - 3.8;
+                           3.8.3. R2, carried by R1, places R2 KFS onto Tic-Tac-Toe Top Row slot(s).
+                           Is it possible for R2 to place KFS into the middle slot while being carried by R1?
+3    f     3.8             If R1 and R2 are carried together, can R1 place the KFS in the first row while       No; Refer to Rulebook Clarification (Dec 2025)
+                           being carried, and after R1 finishes placing it, can R2 place it in the middle row   - 3.8;
+                           while being carried? Is this allowed—yes or no?
+3    g     3.8             When R2 is placing blocks in the Arena, it can continuously cooperate with R1.       No; Refer to Rulebook Clarification (Dec 2025)
+                           When R2 is placing the second column, it is already connected to or being            - 3.8;
+                           lifted by R1. Is this action allowed?
+
+Section 4 Game Field
+                                                                                                                                            Update: 2025/12/15
+    Item           Rule       Questions                                                                            Reply
+                                                                     4.1 Set up (1 minute)
+ 4.1     a         4.1.2      Can the KFS overlap when placing on the forest block?                                Each forest block can only accommodate
+                                                                                                                   one KFS;
+
+
+    Content page                                                                                                                                             8
+4.1   b       4.1.4    Fake scroll cannot be placed on entrance block (1,2,3), but can it be placed on Refer to Rule 3.3.5 & 4.1.4;
+                       exit block? (10,11,12)
+4.1   c       4.1.5    a). What is the orientation of the marked square boundary, is it parallel to the     a). Parallel;
+                       forest block edges? b). Does the placed KFS need to fully cover the square box       b). Mandatory during set-up;
+                       marking? c). Will the symbols stuck on the four sides of the KFS be upright,         c). Symbols are upright;
+                       such that their orientation is perpendicular to the bottom as shown in
+                       Appendix 4.3?
+4.1   d       4.1.7    After the 1-minute setup time, will referees first spend some time verify that all   Yes, referee will verify KFS placements;
+                       KFS on both team's are placed correctly, before the game starts?
+4.1   e       4.1.9    If opponent fails to finish placing KFS on our side during 1-minute setup time       a). Set up by Game Field Helper;
+                       (thus Rule 4.1.9 is triggered) and afterwards, our team also fails to finish         b.) Refer to Rule 4.1.9 - The 30s are not
+                       placing our KFS during 30 seconds, a). what happens? b). For the 30s, is it          included in the game time;
+                       additional clock time? c). That is, can commands be sent to R2 during the 30s?       c). No;
+4.1   f       4.1.9    Will the game begin if the opponent team fails to place KFS in our MF-Forest         Refer to FAQ 4.1 – e;
+                       blocks?
+4.1   g       4.1.9    Can a team intentionally refuse to place KFS on the opponent's side during 1-        No, Refer to Rule 4.1.2, 4.1.9, 8.22 & 10.3;
+                       minute setup time, in order to trigger Rule 4.1.9?
+4.1   h       4.1.10   We would like to ask what is “control unit” mentioned in the rulebook (V1.0) 4.1.10, (a)-(e) all included, Refer to Rule 12.8.
+                       and does it include followings? (a) A controller. (b) A Wi-Fi router, not mounted on the
+                       robot, that relays communications between the controller and the robot. (c) Power
+                       supply of the Wi-Fi router. (d) A device, not mounted on the robot, that relays
+                       communications between the controller and the Wi-Fi router (There would be no input
+                       or other operations on this device). (e) A visualizer that displays the robot's status
+                       (e.g., position in the field, speed, etc.). This is not used to control the robot, but
+                       provides information to team members.
+                                                                                                                                       Update: 2026/02/02
+4.1       i    4.1.1   Can R2 change its code before each game?                                          Yes;
+4.1       j    4.1.3   Is there any condition for the team to place the R1 KFS in the forest blocks of Refer to Rule 3.3.3 & 4.1.3;
+                       the Meihua Forest?
+4.1   k        4.1.9   The rule states that if the opponent fails to place our KFS in time, our own team Refer to FAQ 4.1- e;
+                       places the remaining KFS "within 30 seconds." Does this 30-second placement
+                       period occur before the game timer starts, or does it consume the first 30
+                       seconds of the match time? Furthermore, is the opponent penalized in any
+                       other way for failing to complete setup?
+ Content page                                                                                                                                           9
+4.1   i   FAQ     Regarding the top face of KFS, is there any orientation requirement (viewed No orientation requirement for the top
+          4.1c    from the start zone) when placing it during setup time? That is, can the top face surface, and refer to FAQ 4.1 - c;
+                  Oracle Bone Character/Logo face any of (upright/upside-down /left/right),
+                  when viewed from the start zone? If there is an orientation requirement, some
+                  oracle bone characters possess rotational symmetry and it is difficult to
+                  identify which side is upright. Then how can we place KFS correctly?
+                                                                                                                                   Update: 2025/12/15
+                                                           4.2 Start of the Game
+4.2   a   4.2.3   a). Does the referees allowed to be on the field during the game?             a). Yes;
+                  b). if yes, which area and when?                                              b). Referee can access all game field areas;
+                                                                                                                                   Update: 2026/02/02
+4.2   b   4.2.4   Can adjustments be made to robots by the team when the robot is in            Yes;
+                  the retry area.
+                                                                                                                                   Update: 2025/12/15
+                                                                4.3 Martial Club
+4.3   a    4.3    If both teams’ R2s simultaneously grab the same one spearhead in the Referee judgment - Robot that first grab the
+                  Spearhead Rack, resulting in a standoff even damage to the Spearhead is the initiator. Opponent interference
+                  spearhead, what should be done?                                                 results in violation and Forced Retry. If intentional
+                                                                                                  damage occurs, it may end up with Rule 10.5;
+4.3   b    4.3    Rule 4.3.14 states that “Only R1 can pick up an assembled weapon that has a). Refer to Fig.1 of rulebook for definitions of
+                  fallen within the team’s MC area”. a). What is the definition of “ within the areas of Martial Club and Arena;
+                  team’s MC area”? b). If only a part of the weapon is within the team’s MC area, b). Completely inside;
+                  does that count as “within the within the team’s MC area”? There are also c). Refer to Rulebook Clarification (Dec 2025) -
+                  other similar situations including but not limited to c). “all the components
+                                                                                                  4.5.6 & 8.21;
+                  of the weapon are placed in the used weapon area” as described in Rule
+                                                                                                  d). KFS touch opponent side's ground;
+                  4.5.6; d). “Fallen R1 KFS on the opponent‘s side” in Rule 4.5.10, e). “land on
+                  its own side” in Rule 4.5.14, etc..                                             e). KFS Completely inside;
+4.3   c    4.3    Is it permissible for robot 2 to have 2 grippers to pick up spearheads, Refer to Rule 4.3.4 and Rule 4.3.7;
+                  when the first gripper has attached 1 spearhead to the staff, then the
+                  second gripper is ready to immediately pick up the next spearhead?
+
+
+
+
+Content page                                                                                                                                         10
+4.3   d    4.3    What is the procedure to use the fallen spearhead in the following a) Own item dropped outside game field designated
+                  conditions:                                                             areas cannot be re-used
+                  1. While R2 was picking up the spearhead, it fell into the opponents’ b) Own item dropped within own game field areas,
+                  team area (caused by our R2).                                           options:
+                  2. While R2 was picking up the spearhead, it fell into our team area - Designated robot to pick up
+                                                                                          - Retry to retrieve item dropped within its own side and
+                  (caused by our R2).
+                                                                                          be placed back original position by referee (MC only)
+                  3. While the opposing R2 was picking up the spearhead, it fell into our c) Opponent item dropped by opponent team onto own
+                  team area.                                                              game field areas
+                                                                                             - Opponent team Forced retry – back to MC retry zone
+                                                                                             - Team may request cleanup during opponent team
+                                                                                            robot(s) transport to MC retry zone; Cleanup lasts 10
+                                                                                            seconds from the referee’s signal, whether completed
+                                                                                            or not, clean up by referee
+                                                                                            d) Own items dropped within own game field areas
+                                                                                            initiated by opponent
+                                                                                             - Restore to its previous state by referee
+                                                                                            e) Dropped spearhead within common area
+                                                                                             - Restore to its previous state in Spearhead Rack by
+                                                                                            referee
+                                                                                             - To be removed from Tic-Tac-Toe Rack by referee
+4.3   e   4.3.3   Shall we assume that preventing opponent from taking spearheads by         Referee judgment; If deliberate obstruction
+                  covering 6 spearheads with robot's mechanism or taking more than 4         occurs, it may end up with Rule 10.3;
+                  spearheads will be prohibited, since the team chose to do this strategy
+                  will win by 10-0 only if they assemble one weapon while covering the
+                  other spearheads. Is our assumption correct? Also, would there be any
+                  rule to prohibit this?
+4.3   f   4.3.3   There are 6 spearheads on rack. Include: 3 types with 2 pieces each so     Refer to Appendix Document - Appendix 2.5;
+                  what is their order on rack, and does the order fixed or change each       Place by Referee;
+                  match, and is it placed by host or opponent team?
+4.3   g   4.3.3   Regarding the Rulebook (v.1) 4.3.3, we have a question. We assumed         Spearhead Rack is the common area for both teams. For
+                  that when R2 picks up a Spearhead from the central Spearhead Rack,         other areas, Refer to Rule 8.1 and 8.2.
+                  a mechanism of R2 can enter the space above entire Spearhead Rack          According to Clarification, please find the update:
+                  including opponent team's side of Spearhead Rack. In the other word,       2026/02/02.
+                  it is a violation if the mechanism of R2 enters the space above the
+
+Content page                                                                                                                                         11
+                    opponent team's field, except for the space above opponent team's
+                    side of Spearhead Rack.
+
+4.3   h   4.3.3,    Both teams’ robots might collide or come into contact near the                 Violation is determined by robot sequence:
+          4.5.13,   Spearhead Rack and the Tic-Tac-Toe Rack. Which of the following                For Spearhead Rack, refer to FAQ4.3 – a;
+          4.5.17,   measures applies in this situation?                                            For Arena Tic-Tac-Toe Rack: KFS that first gain entrance
+           4.5.2    (a) violation for both robots                                                  to slot is the KFS initiator.
+                                                                                                   Violation cases are as follows:
+                     (b) violation for a robot that is moving faster
+                                                                                                   - If team attempts to place its KFS while its opponent
+                    (c) violation for a robot that is crossing the centre line of the game field
+                                                                                                   has initiated placing its KFS;
+                    (d) Disqualifications for a team when a robot destroys the opponent’s          - If team attempts to displace opponent's placed KFS;
+                    robot even if collide happens by chance, not intended to do it.                - If both teams are attempting to place its respective
+                    (e) nothing in particular                                                      KFS at the same time onto the same slot, the non KFS
+                                                                                                   initiator (Judge by Referee).
+4.3   i   4.3.4     Can an R2 touch a spearhead that has already been gripped by the Refer to FAQ 4.3 – a;
+                    opponent's R2?
+4.3   j   4.3.6     Can both R1 and R2 touch staff rack/ Spearhead rack/ tic tac toe rack/ R1 and R2 are allowed, individually, to touches it's
+                    Game field wall?                                                            own side of the wall of Staff Rack/ Spearhead
+                                                                                                Rack/ Tic-Tac-Toe Rack/ Game Field;
+4.3   k   4.3.6     If the R1 and R2 accidentally contact while manoeuvring to align for a). Refer to FAQ 4.3 – l;
+                    assembly, but not during the actual attachment, a). is this considered b). Refer to Rule 4.3.2 - 4.3.7;
+                    a violation? b). When does the "assembly" starts and ends?
+4.3   l   4.3.6     can R1 and R2 touch each other in MC or MF when not assembling a R1 and R2 are not permitted to make physical
+                    weapon?                                                                     contact with each other in the Martial Club area
+                                                                                                and Forest;
+4.3   m   4.3.6     According to rulebook 4.3.6, does the “...vice versa” implies that the Cannot, also Refer to Rule 8.4;
+                    staff cannot touch any parts of R2?
+4.3   n   4.3.6     According to rulebook 4.3.6, “... R1 and R2 must not come into physical Refer to FAQ 4.3 - m;
+                    contact …”, does the staff held by R1 count as a part of the robot? Can
+                    the staff touch R2?
+4.3   o   4.3.6     on robot 2 when giving the spreadhead Can it be given to robot 1 No, refer to Rule 4.3.6 & Rule 4.4.8;
+                    without being assembled and just attached to the end of the stick?
+4.3   p   4.3.7     If R2 drops a spearhead in Martial Club when a team tries to assemble their Incorrect; Refer to FAQ 4.3 - d;
+                    first weapon, and it has no mechanism to pick it up, then 9.1.4. of the
+                    rulebook(V 1.0) prohibits replacing it in the spearhead rack and readjust it
+Content page                                                                                                                                            12
+                   when we retry. Even in this case, 4.3.7. of the rulebook(V 1.0) precludes R2
+                   from picking up the next spearhead, also 4.3.9. and 4.3.10. of the rulebook(V
+                   1.0) prohibits R1 and R2 from entering Meihua Forest before assembling a
+                   weapon, meaning they must waste the remaining game time in Martial Club.
+                   Is this correct? In relation to this, if R2 drops a spearhead outside of the game
+                   field, 4.3.11. of the rulebook(V 1.0) forbids reusing spearhead. For the same
+                   reason with the above, the team will just watch them lose for the rest of the
+                   game. If R2 drops a spearhead in opponent field, which rule applies: when it’s
+                   dropped in Martial Club, or when it’s dropped off the field?
+4.3   q   4.3.8    Can completed weapon be passed to R2 be held by it in Meihua Forest                 Refer to Rule 4.4.12; R2 should only collect R2
+                   and Arena?                                                                          KFS and Rule 4.5.12-17;
+4.3   r   4.3.8/   Can the assembled weapons carried by R1 touch the game field floor                  Yes, provided the assembled weapon is carried by
+          4.3.9/   when R1 is moving along the game field area, or do the assembled                    R1; Refer to Rule 4.3.8;
+          4.4.2    weapons have to be carried without touching the floor?
+4.3   s   4.3.9    If R1 is holding one or more assembled weapons, is it possible to exit              Refer to Rule 4.3.9; Unassembled weapon is not
+                   Martial club with holding another unassembled weapon(staff)?                        an assembled weapon;
+4.3   t   4.3.10   In the regulation, R1 must come out before R2. If R1 carries R2 with R2             Refer to FAQ 4.3 - l and Rule 4.3.10;
+                   behind him, is that valid? If the regulation states that robot 2 comes
+                   out after robot 1?
+4.3   u   4.3.10   R1 carry R2 and exit Martial Club at same time, will it permitted?                  Refer to FAQ 4.3 - t;
+4.3   v   4.3.12   What is this stick like? Can robot 1 touch it then retry and the stick will         No; Refer to Rule 9.1.4;
+                   be taken by the operator or a third person (like at Aburobocon 2021)
+                                                                                                                                      Update: 2026/02/02
+4.3   g   4.3.3    Regarding the Rulebook (v.1) 4.3.3, we have a question. We assumed                  Spearhead Rack and Tic-Tac-Toe Rack are the
+                   that when R2 picks up a Spearhead from the central Spearhead Rack, a                common areas for both teams. For other areas,
+                   mechanism of R2 can enter the space above entire Spearhead Rack                     Refer to Rule 8.1 and 8.2.
+                   including opponent team's side of Spearhead Rack. In the other word,
+                   it is a violation if the mechanism of R2 enters the space above the
+                   opponent team's field, except for the space above opponent team's
+                   side of Spearhead Rack.
+4.3   w    4.3     If a team is unable to combine any weapons at all, does that mean the               Yes;
+           MC      game will continue without any resistance from that team?
+4.3   x   4.3.2    Is it mandatory for a team to pick one spearhead of each shape, or can              No, team may choose any spearhead;
+                   a team choose any combination of spearhead shapes?                                  Refer to Rule 4.3.4;
+
+Content page                                                                                                                                            13
+4.3   y    4.3.3      Can R2 carry Spearhead in Mehiua forest and arena?                         No, only assembled weapon(s) is/are carried by
+                                                                                                 R1 out of Martial Club;
+4.3   z    4.3.4      Is there a maximum limit on the total number of spearheads a team can Since there are 4 Staffs, the maximum number of
+                      pick? For example, is it allowed for a team to collect more than three assembled weapons is four; If attempt to grab
+                      out of the six available spearheads?                                       more spearhead after assembled four weapon
+                                                                                                 may end up with Rule 10.3;
+4.3   aa   4.3.5.     Can R1 and R2 assemble a weapon in the Meihua Forest or Arena, No, weapon can only be assembled in MC;
+                      assuming they have met the entry requirements for those areas?
+4.3   ab   4.3.5,     The weapon assembly involves connecting a Staff to a Spearhead using Teams to determine the necessary force to
+           Appendix   a Quick Coupler. Could you provide the technical specification for the placement the Spearhead onto the Staff; Refer to
+             2.1
+                      insertion force (in Newtons) required to successfully snap the Quick Rule 4.3.5;
+                      Coupler into place? This data is critical for designing the assembly
+                      mechanism for R1 and R2
+4.3   ac   4.3.6      in rule (4.3.6) R1 shall hold its Staff during assembly, and R2 shall hold 1). Refer to Rulebook Section 4.3;
+                      its Spearhead. During assembly, R1 cannot touch R2’s Spearhead and 2). No, Refer to FAQ 4.3 - l;
+                      vice versa. R1 and R2 must not come into physical contact with each
+                      other throughout the entire assembly process. Our question is as
+                      follows. 1). Fully define the entire assembly process; 2). Can R2 and
+                      R1come into physical contact before actually assembling Spearhead
+                      and Staff, then separate while both holding/carrying their designated
+                      Staff and Spearhead.
+4.3   ad     4.3      Can R1 touch R2 when not in Martial Club, for example R1 helps R2 No, R1 cannot helps R2 to climb or exits the
+            Martial   climb Meihua Forest and when R2 exits Meihua Forest R2 can climb Forest, Refer to FAQ 4.5 - ay;
+             Club
+                      onto R1's waist?
+4.3   af   4.3.6      During assembly, could a part of R1 or R2 able to touch "Zone 2 - Meihua No. The assembly should be completed inside the
+                      Forest"? Does "exits" mean all robot parts are outside that area?          Martial Club; Refer to Rule 4.3.10;
+4.3   ag   4.3.7      If R2 is unable to pick up the current Spearhead after it lands in the Team has the following options:
+                      game field. Does R2 need to "Retry" and team return it to the central 1). Retry;
+                      Spearhead Rack according to section 9.1.4, or does it need to pick up a 2). R2 pickup the dropped spearhead;
+                      different Spearhead from the central Spearhead Rack?                       Refer to FAQ 4.3 -d;
+                                                                                                 R2 cannot touch another spearhead until the
+                                                                                                 dropped spearhead had been dealt with;
+
+
+Content page                                                                                                                                 14
+4.3   ah   4.3.8      can only sphere head / only shaft (dismantled) be carried by R1 out of No, only assembled weapon(s) is/are carried by
+                      the Martial Club?                                                         R1 out of MC and refer to Rulebook Clarification
+                                                                                                (Dec 2025) - 4.3.9;
+4.3   ai   4.3.9      Suppose R1 gets a retry from the start zone while R2 is in the forest Refer to Rulebook Clarification (Dec 2025) - 4.3.9,
+                      blocks of the Meihua Forest, and the assembled weapon from R1 has 4.3.10 & FAQ 4.5 -b;
+                      already been placed in its assigned position. In this situation, how can
+                      R1 move from the Martial Club to the Meihua Forest without the
+                      weapon? Does this imply that both robots must take a retry to fulfill the
+                      conditions mentioned in Sections 4.3.9 and 4.3.10?
+4.3   aj   N/A        During the assembly of weapons in the Martial Club, if one team’s R2 No; Refer to FAQ 4.3 - ag;
+                      drops a spearhead on the ground, intentional or not, can it pick up
+                      another spearhead on the rack to proceed with weapon assembly?
+                                                                                                                                      Update: 2025/12/15
+                                                                   4.4 Meihua Forest
+4.4   a     4.4        Can R1 has arm to carry/ lifted R2 over forest, while R1 still move      No, R2 enters Forest by itself;
+           R1 carry    along pathway and R2 is carried moving in the airspace above block in    Refer to Rule 4.4.13;
+             R2
+                       forest, will it be permitted?
+4.4   b     4.4        When robot 2 has reached the final forest blocks of Meihua Forest,       Refer to FAQ 4.3 – l;
+                       can robot 1 immediately lift robot 2 to take it to the arena and place
+                       KFS directly on the top row of tic tac toe?
+4.4   c     4.4        Can R1 carry R2 when: a) in the Martial Club before assembling the       Refer to FAQ 4.3 - l;
+                       weapon? b) in the Martial Club after assembling the weapon? c) in the
+                       R2 entrance zone in the Meihua Forest? d) in the R2 exit zone in the
+                       Meihua Forest? e) on the ramp connecting Meihua Forest and Arena?
+                       f) in the Arena, and R2 attempts to place KFS into the middle row of
+                       Tic-Tac-Toe? g) in the Arena, and R1 attempts to place KFS into the
+                       bottom row of Tic-Tac-Toe?"
+4.4   d     4.4        What if the fake KFS is being hit by another dropped KFS, and it is      a). No, not a violation if not intentional;
+                                                                                                b). Assembled weapon is the only means to remove opponent’s
+            Fake       moved. a). Does it count as a violation? b). If R1 comes into contact    KFS from Tic-Tac-Toe and can be used only once;
+            KFS        with the Fake KFS only using the holding weapon, not the robot itself,   According to Clarification, please find the
+                       and does not move it also, will this be considered a violation?          update: 2026/02/02.
+4.4   e      4.4       R2 is not allowed to collect R1 KFS in Rule 4.4.12 Then, can R2          Not allowed;
+           Touching
+                       touches R1 KFS? Can R1 touches R2 KFS?                                   Refer to Rule 4.4.1. & 4.4.12.
+
+Content page                                                                                                                                              15
+              vs
+          collecting
+4.4   f     4.4   a). Can a KFS touch another KFS in the Meihua Forest ? b). If it is             a). Not allowed - stacking; Each robot can carry
+           Touch  allowed then can KFS be placed on top of each other in the                      one or more KFS, each pickup action can collect
+             KFS
+                  opponent's Meihua Forest during the setup time and once the game
+          using KFS                                                                               one KFS; b). KFS can only be placed onto vacant
+                  begins can our team stack KFS in our Meihua Forest?                             block during set-up time;
+4.4   g     4.4   According to Rule 4.4.19, R2 can pick up the R2 KFS that has fallen in          No, R2 occupied the block before KFS fallen;
+                  the MF forest. If a R2 KFS falls on the FM block where R2 is currently
+                  located, is it counted as " R2 moves onto an MF block when there is a
+                  KFS", as stated in Rule 8.10?
+4.4   h     4.4   while moving through the forest, can R2 run over (e.g, the R1/Fake              Refer to FAQ 4.4 -e & Rule 8.9;
+                  KFS lies under the R2 chassis) or touch the R1 and Fake KFSs?
+4.4   i     4.4   Rule 4.4.11 states “The team can request R1 or both R1 and R2 when              Refer to Rule 4.4.11 & 4.4.21;
+                  in MF to retry and return to the Martial Club Retry Zone (RZ)”. Then,
+                  can the team request R2 only when in MF to retry and return to the RZ?
+4.4   j    4.4.5. What is the meaning of deciding how many? If you have taken 3, can              The team decides the number of R1 KFS required
+                  you only bring 2?                                                               for the Arena Tic-Tac-Toe game.
+4.4   k   4.4.6/ a) Definition of outside and inside Meihua Forest. What is the precise           a). Line is inclusive as part of Meihua Forest;
+          4.4.8/ boundary of "inside Meihua Forest" (line inclusive/exclusive)? b) If a           b). Refer to Rule 4.4.6, 4.4.8 & 4.4.17;
+          4.4.17 KFS/weapon is dropped partially outside (touching the line), is it
+                  considered outside of the Meihua Forest?
+4.4   l   4.4.10 Where should the disassembled weapons in Meihua Forest be                        As-is;
+                  placed?
+4.4   m   4.4.11. a). After robot 2 has taken the KFS and when descending from Meihua             a). Refer to Rule 4.4.17 and 4.4.18;
+                  Forest, the KFS falls, will it be brought back during the retry or will it be   b). Refer to Rule 3.3.3, 3.3.4 and 3.3.5 for
+                  retrieved from the beginning? b). Then can robot 2 help to retrieve the         placements of KFS;
+                  KFS from robot 1 because according to the regulations, the length of
+                  the robot only extends up to 1800 so if there is a KFS R1 in the middle
+                  of the forest, it cannot be retrieved because it is too far away.
+4.4   n   4.4.13 After R2 has already exited the Meihua Forest once, if it wishes to re-          No, refer to Rule 4.4.13;
+                  enter, can it enter again from blocks 11, 12, and 13 (the blocks
+                  through which it previously exited), or must it re-enter only from the
+                  designated entry blocks 1, 2, and 3?
+
+
+Content page                                                                                                                                     16
+4.4   o   4.4.14       When the term "adjacent" is used in the context of the Meihua Forest          No, refer to Figure 1. Game Field diagram. - block
+          definition   (MF), does it also include the diagonal blocks connected to the block         2,4,6 and 8 are regarded as adjacent to block 5;
+              of
+          Adjacent     on which R2 is currently located? Kindly clarify the intended meaning         Refer to Rule 4.4.14;
+                       and applicability of these terms in all instances/rules where
+                       "adjacent" is referenced.
+4.4   p   4.4.14       If R2 steps on the boundary of two blocks, does it mean we can pick           R2 can only occupy one forest block at one time;
+                       up KFS from the adjacent blocks of both blocks it is currently on? Or
+                       R2 must be fully within one block in the Forest?
+4.4   q   4.4.14       If robot 2 already pick up a r2 kfs, is it allow to stack it on another r2    Refer to FAQ 4.4 - f;
+                       kfs before took both of them up?
+4.4   r   4.4.15       According to the rulebook(V.1.) 4.4.15, "If blocks 1, 2, or 3 contain R2      a). No, only collect its first KFS; Refer to Rule
+                       KFS, R2 must collect its first KFS from the R2 Entrance Zone".                4.4.15;
+                       Regarding this, we would like to ask following questions: (a) Can R2
+                       collect its second KFS from the R2 Entrance Zone? Consider the                b). No, R2 can only pick up other R2 KFS while
+                       situation that R2 KFS is placed on block 1 and 2, and then R2 pick up         occupying adjacent forest block; Refer to Rule
+                       the R2 KFS on block 1 from the Entrance Zone. In this situation, can          4.4.14;
+                       R2 pick up R2 KFS on block 2 from the Entrance Zone? Or does R2
+                       need to move to block 1 before picking up R2 KFS on block 2? (b) Is it
+                       allowed to pick up R2 KFS on blocks 10, 11, or 12 from the R2 Exit
+                       Zone?
+                                                                                                                                       Update: 2026/02/02
+4.4   d     4.4        What if the fake KFS is being hit by another dropped KFS, and it is          a). No, not a violation. Any KFS affected by
+          Fake KFS     moved. a). Does it count as a violation? b). If R1 comes into contact        another dropped KFS will remain as-is.
+                       with the Fake KFS only using the holding weapon, not the robot itself,       b). Yes, violation; Unused assembled weapon is
+                       and does not move it also, will this be considered a violation?              the only means to remove opponent’s KFS from
+                                                                                                    Tic-Tac-Toe and can be used only once;
+4.4   s     4.4        In the Meihua Forest, can Robot R2 partially touch or rest on the next       Yes, R2 can partially touch or rest on the next step
+                       step while picking up the box, or must R2 remain fully on its current        while picking up the KFS. Robot detaches the
+                       step until the box is picked?                                                surface of ground/original block will count as
+                                                                                                    'moving/climbing onto'.
+                                                                                                    Violation if R2 loses contact with the surface of its
+                                                                                                    original block before it successfully gripped and
+                                                                                                    lifted the KFS off the surface of an adjacent block.
+
+Content page                                                                                                                                             17
+4.4   t   4.4.19 As said in reference rule number (4.4.19) R2 must exit Meihua Forest          Refer to FAQ 4.3 - ad;
+                 via one of the designated blocks (10, 11 or 12). Will it be violation if R2
+                 gets directly on top of R1 and is carried to the Arena from Meihua
+                 forest from these designated blocks without ever touching ground?
+4.4   u     4.4  R2 can touch the R1 KFS in Meihua Forest ?                                    Refer to Rule 8.8;
+4.4   v   4.4.1/ What is meant by rules number 4.4.1 and 4.4.17, that you can take the         Refer to FAQ 4.5 - bj;
+           4.4.7 KFS by sliding or pulling it without having to lift it from the surface of
+                 the forest?
+4.4   v   4.4.1/ What is meant by rules number 4.4.1 and 4.4.17, that you can take             Refer to FAQ 4.5 - bj;
+           4.4.7 the KFS by sliding or pulling it without having to lift it from the surface
+                 of the forest?
+4.4   w     4.4  Can Robot R2 maintain a continuous contact with the forest blocks             Refer to FAQ 4.4 - s;
+                 as a physical reference to move straight in the Meihua Forest, such
+                 that the robot does not touch the Fake KFS/R1 KFS by accident?
+4.4   x    FAQ With reference to 4.4 (f), stacking R2 KFS on top of each other is              1. No, stacking KFS on forest block is not allowed
+           4.4 f disallowed. Stacking, by definition, means to place objects on top of         2. Yes, stacking in own robot is allowed
+                 each other such that both of them come "in contact" with each other.
+                 So, if there's an intentional gap between two R2 KFS such that there's
+                 no contact between them, will this still be counted as "stacking"?
+4.4   y    FAQ 1. Can we stack kfs one over other in mehuia forest blocks.                     Refer to FAQ 4.4 - x;
+           4.4 f 2. Can we stack KFS one over other in our robot (R1 and R2) , in full
+                 arena.
+                                                                                                                                Update: 2025/12/15
+                                                               4.5 Arena
+4.5   a    4.5    During the transmission of KFS from Meihua Forest to Arena, do R1 and Refer to Rule 3.7, 4.5.1, 4.5.12, 6.2;
+                  R2 must be carrying the KFS? Can they simply throw the KFS to Arena,
+                  or can they transmit them by just pushing the KFS on the floor to get
+                  through the ramp?
+4.5   b    4.5     Can R2 and R1 return to the martial club or Meihua forest without Refer to Rulebook Clarification (Dec 2025) - 4.3.9,
+                  taking a Retry?                                                       4.3.10;
+                                                                                        The rules below remain valid for robots after first
+                                                                                        exit of Martial Club:
+                                                                                        - 4.4.13. R2 must enter Forest via R2 Entrance
+                                                                                        Zone
+Content page                                                                                                                               18
+                                                                                           R1 exits with one or no assembled weapon;
+                                                                                           - No sequencing exit rule for R1 and R2;
+                                                                                           - R2 is not allowed to touch R1 Pathway if it goes
+                                                                                           through Meihua Forest;
+4.5   c    4.5   To prevent the opponent from placing a KFS. Can we extend a robots No; Refer FAQ 4.4 - d; If deliberate obstruction
+                 mechanism or use a weapon to occupy a slot and block the opponent occurs, it may end up with Rule 10.3;
+                 from placing a KFS in that slot?
+4.5   d    4.5   KFS can be carried inside the Arena. Then, can they be put on the Yes; Refer to Rule 6.2;
+                 ground in Arena?
+4.5   e    4.5   Will the referee signal a successful placement of a KFS?                  Yes once KFS success placement;
+                                                                                           Successful placement is a stationary KFS placed
+                                                                                           onto slot without falling or robot intervention;
+4.5   f    4.5   Is there any orientation required on putting the kfs on tictactoe racK    Refer to FAQ 4.5 - e;
+4.5   g    4.5   If R1 places its R1 KFS in the middle or top row of the Tic-Tac-Toe Rack, Each placement must comply with 3.8.1 for R1,
+                 or if R2 places its R2 KFS in the bottom row of the Rack, are these 3.8.2 for R2 and 3.8.3 for R1 and R2 together.
+                 actions considered violations? If so, why were not such violations 3.8.1.- R1 places R1 KFS onto Tic-Tac-Toe Bottom
+                 listed in Section 8?                                                      Row slot(s). Perform by R1 individually.
+                                                                                           3.8.2.- R2 places R2 KFS onto Tic-Tac-Toe Middle
+                                                                                           Row slot(s). Perform by R2 individually.
+                                                                                           3.8.3.- R2, carried by R1, places R2 KFS onto Tic-
+                                                                                           Tac-Toe Top Row slot(s). Perform by R1 and R2
+                                                                                           combined.
+4.5   h    4.5   Is there any particular order to follow in scrolls placing in tic-tac-toe No specific order; Refer to FAQ 4.5 -g
+4.5   i    4.5   When R1 and R2 enter the Arena through the Ramp, can R1 push R2? Refer to FAQ 4.3 - l;
+4.5   j    4.5   If I collect KFS by going back and forth from the arena to the MF, then Refer to FAQ 4.5 - d;
+                 store the KFS in the arena until all of them are gathered and only then Refer to Rule 6.2;
+                 arrange them in the tic-tac-toe slot, is that allowed?
+4.5   k    4.5   Can we replace KFSs which is already placed on the Tic-Tac-Toe Rack Yes; Refer to FAQ 4.5 - g;
+                 onto another slot?
+4.5   m    4.5   We have noticed that in Rules 4.5.2 and 4.5.17, all KFS are in the Yes; Refer to FAQ 4.5 - g;
+                 singular form. Does it mean that R1/R2 can only place one KFS into a
+                 vacant slot in the Tic-Tac-Toe Rack each time?
+4.5   n    4.5   Can R1's kfs be used to displace R2's kfs in tic-tac-toe?            Not permitted; Refer to FAQ 4.4 -d;
+
+Content page                                                                                                                               19
+4.5   o    4.5     In Rule 4.5.17, there is no specific stipulation that the KFS must be R2   No, refer to FAQ 4.5 - g;
+                   KFS. So, when R2 is raised by R1, can R2 place R1 KFS into the Top of
+                   the Tic-Tac-Toe Rack?
+4.5   p    4.5     Explain the conditions for R1 and R2 to enter the arena as mentioned       Refer to Rule 3.7, 4.5.1 & 4.5.12;
+                   for both R1 and R2 during their entry in MF.
+4.5   q    4.5     According to rules 4.5.2 and 4.5.13, there can only be two teams' R1       Refer to FAQ 4.5 -g; Each slot in the Tic-Tac-Toe is
+                   KFSs in the bottom row of the Tic-Tac-Toe Rack, only two teams' R2         allowed to have ONE KFS;
+                   KFSs in the middle row, and only two teams' R2 KFSs in the top row,
+                   right?
+4.5   r    4.5     What is the definition of "vacant slot" in Rules 4.5.2 and 4.5.17?       A "vacant slot" means a slot where no team's KFS
+                                                                                            has yet gained entrance;
+4.5   s   4.5.1    According to this rule, R1 has already placed two R1 KFS in the Tic-Tac- Refer to Rule book clarification Dec 2025 - 4.5.1 &
+                   Toe rack inside the Arena and then returns to the Meihua Forest (MF) 4.5.12:
+                   to collect the third R1 KFS. However, while attempting to pick it up, R1
+                   accidentally drops the KFS. In this situation, considering that R1 has
+                   already used all the assembled weapons it previously brought, will it
+                   be considered a violation if R1 re-enters the Arena a second time
+                   without carrying either a KFS or an assembled weapon？
+4.5   t   4.5.2.   When a robot’s hand holding a KFS is kept in Tic-Tac-Toe rack, is this Refer to FAQ 4.3 – h, FAQ 4.5 -e, FAQ 4.5 -g, FAQ
+                   classified as “placed” or “vacant” as described in sections 4.5.2 and 4.5 -r;
+                   4.5.13 of the rule book(V 1.0)? If it's "placed," it becomes very difficult
+                   to use a weapon to remove such KFSs stored on the rack. Though, even
+                   if it's "vacant," the opponent cannot place a KFS onto the slot because
+                   the KFS is in the way. So, if our robots keep its hands holding KFSs
+                   entered to the three slots in a single column, and the robot
+                   simultaneously releases KFSs, it fulfills the requirements for “Kung Fu
+                   master”. Is this understanding correct? In this case, there are no time
+                   to use weapons before “Kung Fu master” victory. If these situations are
+                   not intended, we would like to see restrictions put in place, such as
+                   prohibiting the KFS from being kept in the Tic-Tac-Toe rack for a certain
+                   number of seconds.
+
+
+
+Content page                                                                                                                                    20
+4.5   u    4.5.2    Can R1 place multiple KFS in the tic-tac-toe rack simultaneously?             No, refer to FAQ 4.5 - g; R1 should place KFS in
+                                                                                                  the Tic-Tac-Toe one at a time. R2 should also
+                                                                                                  place KFS one at a time.
+4.5   w    4.5.3    A fully assembled weapon has two ends, End A and End B. End A has a Must use the Spearhead;
+                    spearhead, while End B does not. When R1 uses a weapon to remove
+           Weapon   an opponent’s KFS in the Tic-Tac-Toe Rack, must it use the End A, or
+           usage
+                    can either the End A or B end be used?
+4.5   x    4.5.3    Can multiple opponent blocks be pushed simultaneously by using two Not permitted, refer to Rule 8.15;
+                    different weapons? Instead of pushing, is it permissible to pull an Not permitted, refer to Rule 10.3;
+                    opponent's KFS into our area?
+4.5   y    4.5.3     If our team's KFS has been placed in the Tic-Tac-Toe Rack and the Not permitted; Refer to FAQ 4.4 - d;
+                    opposing team attempts to use its weapon to make our KFS fall out of
+                    the Rack, how should we prevent the KFS from falling? Can a
+                    weapon ,a part of the robot or an KFS be used to block the KFS from
+                    falling? If an Assembled Weapon is to defend our KFS, will that weapon
+                    still be judged as "used" based on rulebook v.1 sections 4.5.4 and
+                    4.5.5?
+4.5   z    4.5.3    Can R1 use weapon carrying R2?                                                No, weapon is not the part of R1;
+                                                                                                  Refer to Rule 3.8.3;
+4.5   aa   4.5.3    In Tic Tac Toe Rack, when R1 attacks and the weapon disassembles Refer to Rulebook Clarification (Dec 2025) - 4.5.6
+                    (spearhead leaves the staff). Is it still required for R1 to return all parts & 8.21;
+                    of the weapon, including spearhead to the used weapon zone?
+4.5   ab   4.5.3    Can an assembled weapon or part of the robot pass through the Tic No.
+                    Tac Toe Rack and reach the opponent side of the Arena?
+4.5   ac   4.5.3    Can an Assembled Weapon touches an opponent's Assembled Refer to FAQ 4.4 -d; Referee judgment;
+                    Weapon? If this accident happened, how will the following situations
+                    be judged? a) Both Assembled Weapon remain the same. b) One of the
+                    Assembled Weapon was dismantled, and another one remains the
+                    same. c) Both Assembled Weapon were dismantled.
+4.5   ad   4.5.3    Are KFS on the Tic Tac Toe Rack invalid upon touched by an opponent's No, Refer to FAQ 4.5 - e;
+                    assemble weapon?
+4.5   ae   4.5.3.   When opponent's robot tries to remove our KFS by an Assembled No part of R1, R2 and KFS can be used as the means of
+                    weapon, if our robot prevent a KFS from being removed by supporting defend team’s KFS from being displaced; According to
+                    the KFS by the robot, is a violation imposed on our team? If our robots Clarification, please find the update: 2026/02/02.
+Content page                                                                                                                                    21
+                    support the KFS and prevent the KFS from being fallen on purpose, we
+                    think a violation should be imposed on our team. If a violation is not
+                    imposed, it becomes very difficult for an opponent's robot to remove
+                    our KFS. On the other hand, if opponent's robot uses an Assembled
+                    weapon right after our robot places the KFS, our robot's hand is still
+                    near the KFS and might prevent the KFS from being fallen
+                    unintentionally. In this case we think violation should not be imposed.
+4.5   af   4.5.3.   Section 8, the violation section, does not define a violation for R1      Yes, it is violation; Refer to Rule 8.22, Rule 4.5.3 &
+                    removing an opponent's KFS by means other than an Assembled               FAQ 4.4 - d;
+                    Weapon. Given this, would removing an opponent's KFS using
+                    something other than an Assembled Weapon —for example, a part of
+                    our robot's mechanism or our own KFS— be considered a violation?
+4.5   ag   4.5.3.   Can R1 use an assembled weapon to drop the opponent's KFS to our          Not permitted;
+                    side and make it unusable as stated in Rulebook(V.1) 4.5.10 and           Refer to Rule 10.3;
+                    4.5.15? If this is permitted, we believe that if the opponent's KFS is
+                    dropped to our side, and is then put into our Meihua Forest, the
+                    opponent would be forced to retry based on Rulebook v.1, 8.19: "If a
+                    team’s own KFS is dropped into the opponent’s Meihua Forest." Is
+                    such an action permitted?
+4.5   ah   4.5.3.   Regarding rulebook(V.1.) 4.5.3, we have a question when robots place      Refer to FAQ 4.3 - h; According to Clarification,
+                    KFS. When both teams' robots tried to place KFS on the same slot          please find the update: 2026/02/02.
+                    simultaneously, how is it handled? To be specific: (a) Team A holds its
+                    KFS in the tic-tac-toe slot first, and team B also tried to place KFS
+                    afterward. Then, if team A released KFS before team B releases KFS,
+                    and that KFS released by team A falls from tic-tac-toe rack because of
+                    the contact with the KFS of team B, is team B considered to have
+                    committed a violation? (b) Team A and team B come to the tic-tac-toe
+                    rack and tried to place KFS simultaneously. Then, if team A released
+                    KFS before team B releases KFS, and that KFS released by team A falls
+                    from tic-tac-toe rack because of the contact with the KFS of team B, is
+                    team B considered to have committed a violation? (c) Team A holds its
+                    KFS in the tic-tac-toe slot first, and team B also tried to place KFS
+                    afterward. Then, a robot of the team B pushes a robot of team A via its
+
+
+Content page                                                                                                                                      22
+                    KFS, and KFS held by the robot of team A goes out of tic-tac-toe rack.
+                    Is this action done by team B allowed?
+
+
+
+
+4.5   ai   4.5.3.   When we displace an opponent's KFS blocks, will their points              Refer to Rule 6.3.4;
+                    deducted?
+4.5   aj   4.5.3    How does "release" mean, is it mean when the robot drop the weapon?       Assembled weapon is declared as “Used
+                    or the weapon not touching the kfs anymore after its first touch with     Weapon” once the weapon moves the KFS from
+                    kfs? If opponent robot pull their kfs back right after our weapon touch   its initial position;
+                    kfs to create a gap between will the weapon considered used?              Refer to FAQ 4.5 - ae;
+4.5   ak   4.5.3.   When our KFS is pushed by the opponent and falls, can it be taken         Refer to Rule 4.5.14. & 4.5.9;
+                    back? Conversely, if the opponent's KFS is dropped, can they use it
+                    again?
+4.5   al   4.5.5    R1 attempted to remove and touch the opponent's KFS in Tic Tac Toe        Refer to FAQ 4.5 - aj;
+                    Rack, but the KFS did not fall. Can the weapon be still used and push
+                    the same KFS until it has fallen?Is R1 attempt finished?
+4.5 am     4.5.5    Before the opponents keep their KFS in the tic tac toe rack, can R1       No, Refer to FAQ 4.5 – n & FAQ 4.4 -d;
+                    point its weapon inside it?
+4.5   an   4.5.5    The opponent pushed/placed the KFS and touched our team’s                 Referee judgment; Refer to FAQ 4.4 -d;
+                    assembled weapon, does that count as used after our weapon has left
+                    the KFS?
+4.5   ao   4.5.5    Rule 4.5.6 stipulates that R1 must place all parts of the used weapon     Refer to FAQ 4.5 - aa;
+                    in the “Used Weapon Area”. Does it mean that the vertical projection
+                    of the used weapon is not allowed to exceed the Used Weapon Area?
+
+
+
+Content page                                                                                                                               23
+4.5   ap   4.5.5    According to rulebook 4.5.5, when is the weapon regarded as released       Refer to FAQ 4.5 - aj;
+                    from KFS? Are the following scenarios counted as released from KFS,
+                    after the weapon touched KFS? 1. The weapon stopped moving while           If the team deliberately not to retract the weapon
+                    KFS moved and left the weapon, then the weapon start to move again         - team will be disqualified by POJ;
+                    and touch same KFS? 2. The weapon spins/moves and leaves KFS               Refer to Rule 10.3;
+                    momentarily (KFS not fallen), then touch the same KFS again
+4.5   aq   4.5.5    In Rulebook v.1 section 4.5.5, it states, "Each weapon is regarded as      Not Permitted; Refer to FAQ 4.4 - d;
+                    'used' when it touches any KFS (own or opponent's) and releases."
+                    However, is it permitted for a weapon to simultaneously touch two
+                    KFSs with both its spearhead and its staff before the weapon releases
+                    from the KFS? If permitted, is it allowed to attempt to drop two of the
+                    opponent's KFSs simultaneously by doing so, or to block two of one's
+                    own KFSs from being dropped?
+4.5   as   4.5.6    If our R1 only uses one weapon throughout the entire game, does that       Yes, used weapons must be disposed after being used;
+                    weapon have to be disposed in the Used Weapon Area after use? (as          Refer to FAQ 4.4 -d; According to Clarification, please
+                    rule 4.5.6 only mentions disposing is only needed when another             find the update: 2026/02/02;
+                    weapon is to be used)
+4.5   at   4.5.6    Dismantled definition. Is it dismantled if we break a little part of the   Dismantled weapon cannot be used;
+                    weapon during transportation? Can the component of the weapon be
+                    considered "dismantled" for reuse during the match?
+4.5   au   4.5.7    Does the term "to land on its own side" require the KFS to make direct     Yes; Refer to Rule 6.2;
+                    contact with the game field floor? Can a robot touch the falling KFS
+                    before it hits the ground? Especially, if a KFS is removed from the Tic-
+                    Tac-Toe rack by an opponent's weapon and comes to rest on top of
+                    another KFS that is already lying on the floor on our side of the field
+                    (without the removed KFS touching the floor directly), is it still
+                    considered to have "landed on our side" and thus can be picked up?
+4.5   av   4.5.9.   can there be physical contact between r1 and r2 when passing fallen        Yes; Refer to FAQ 4.3 -l;
+                    kfs to each other in arena?
+4.5   aw   4.5.11   Does the KFS count as successfully placed, as long as it is not falling?   Successful placement is a stationary KFS placed
+            and     What if the KFS falls down spontaneously after placement of KFS,           onto slot without falling or robot intervention;
+           4.5.16   without obstructions from the opposing team (i.e. not using any
+                    assembled weapon?)
+
+Content page                                                                                                                                       24
+4.5   ax   4.5.13  Assume the Tic-Tac-Toe board compartments are numbered 1 to 3                   Yes, refer to FAQ 4.5 -k;
+                   from left to right in the top row; 4 to 6 from left to right in the middle
+                   row; and 7 to 9 from left to right in the bottom row. If the opponent has
+                   placed their KFS in compartment 5 of the rack, and we have placed our
+                   KFS in compartment 4, and we use a weapon to push the opponent’s
+                   KFS out of compartment 5, are we then allowed to move our KFS from
+                   compartment 4 into compartment 5?
+4.5   ay    4.5.1, a). Can R1 provide a "step" or "platform" that R2 uses to climb, with           No; Yes; No;
+            4.5.1, R2's own power? Or a system is needed, driven by R1 to get R2 on? Or            Refer to FAQ 4.3 - l and Rule 4.5.17;
+            4.5.3 both situations are ok?
+4.5   az   4.5.17 Regarding the Rulebook(V 1.0) 4.5.13. and 4.5.17., is it permissible for         No; Refer to FAQ 4.5 - g;
+                   R2 lifted by R1 to place R2 KFSs in the Tic-Tac-Toe middle row?
+4.5   ba   4.5.17. Regarding rulebook(V.1.) 4.5.17, we assumed that the sentence "R2               Yes;
+                   must be lifted" means that "R2 does not touch ground" and "R2 is in
+                   touch with R1". Is our assumption correct?
+4.5   bb   4.5.17. a) After R1 lifts R2, is it required for R1 to lower R2 to the ground after     Refer to FAQ 4.5 - g;
+                   each KFS placement on the top row of the Tic-Tac-Toe?Or, is it
+                   permissible for R2 to place multiple KFS onto the top row of the Tic-
+                   Tac-Toe sequentially, while being carried continuously by R1 during a
+                   single lift? 2) While R2 is being lifted by R1, is R2 also permitted to place
+                   a KFS onto a vacant slot in the middle row of the Tic-Tac-Toe? 3) While
+                   R1 is lifting R2, is R1 permitted to place a KFS onto a vacant slot in the
+                   bottom row of the Tic-Tac-Toe?
+4.5   bc   4.5.18 Simultaneously definition. Is it counted as placed once the KFS                  Refer to FAQ 4.5 - g;
+                   touches the Tic-Tac-Toe slot? What if R2 is holding two KFS at a time,
+                   and holds the position on the top and middle row at the same time, it
+                   has released and placed a KFS in the top row, and immediately
+                   releases the second KFS and places it on the middle row, does this
+                   action count as a violation?
+4.5   bd   4.5.18 Does this rule prohibit the team from placing multiple KFS in the Tic-           Refer to FAQ 4.5 - g;
+                   Tac-Toe Rack at the same time, provided the placement actions are:
+                   (a) performed by different robots (R1 and R2), AND (b) target different
+                   rows (e.g., R1 places a KFS in the bottom row horizontally while R2
+                   places a KFS in the middle or top row)?
+Content page                                                                                                                               25
+4.5   be   4.5.18   What counts as a successful placement of a KFS in the tic tac toe rack? Refer to FAQ 4.5 - aw;
+                    1. The KFS is within the dimension of a slot, but still has contact with
+                    the robot. 2. The KFS is within the dimensions of a slot, does not have
+                    contact with the robot, but it is not still (it is moving). 3. The KFS is
+                    within the dimensions of a slot, has no contact with the robot and is
+                    still
+4.5   bf   4.5.18   According to the rulebook (V 1.0) 4.5.18., we would like to know which Refer to FAQ 4.5 - g;
+                    of the followings are allowed ? (A) R2 holds more than two R2 KFSs in
+                    the Arena, while R1 is lifting R2. (B) R2 holds more than two R2 KFSs in
+                    the Arena, while R1 is lifting R2. R2 complete placing one R2 KFS into a
+                    slot, before R2 insert another KFS. (C) R2 holds more than two R2 KFSs
+                    in the Arena, while R1 is lifting R2. R2 completely inserts a R2 KFS, and
+                    then R2 inserts next R2 KFS before R2 releases former KFS. (D) R2
+                    holds more than two R2 KFSs in the Arena, while R1 is lifting R2. R2
+                    place multiple KFS at nearly the same time into different slots of the
+                    Tic-Tac-Toe Rack. Also, if (D) is permitted, is it permitted to insert KFS
+                    into the slot at any interval, no matter how small (e.g. around 0.001
+                    seconds) ? If not, how many seconds exactly is needed?
+4.5   bg   4.5.18   We would like to clarify the precise definition of the word "attempt" in Refer to FAQ 4.5 - g;
+                    this context. We are considering two possible interpretations: (A) The
+                    "attempt" refers to the robot's simultaneous physical position. The rule
+                    only prohibits R2's mechanism (or the KFS it holds) from being
+                    physically inside both a middle row slot and a top row slot at the same
+                    time. (B) The "attempt" refers to the robot's state. Since Rule 4.5.17
+                    requires R2 to be carried by R1 to place a KFS in the top row, this
+                    interpretation considers that being in the "carried state" itself
+                    constitutes an "attempt" for the top row. Therefore, this rule (4.5.18)
+                    would prohibit R2 from placing a KFS in the middle row while it is
+                    carried by R1. Which of these interpretations is correct? If neither is
+                    correct, could you please provide the detailed definition of a prohibited
+                    "attempt"?
+                                                                                                                       Update: 2026/02/02
+4.5   ae   4.5.3.   When opponent's robot tries to remove our KFS by an Assembled No part of R1, R2 and KFS can be used as the
+                    weapon, if our robot prevent a KFS from being removed by supporting means of defend team’s KFS from being displaced;
+Content page                                                                                                                          26
+                    the KFS by the robot, is a violation imposed on our team? If our robots    Defensive action is violation, it defined as any
+                    support the KFS and prevent the KFS from being fallen on purpose, we       action taken by the robot(s) in preventing its own
+                    think a violation should be imposed on our team. If a violation is not     team’s KFS from falling out of the Tic-Tac-Toe slot;
+                    imposed, it becomes very difficult for an opponent's robot to remove
+                    our KFS. On the other hand, if opponent's robot uses an Assembled
+                    weapon right after our robot places the KFS, our robot's hand is still
+                    near the KFS and might prevent the KFS from being fallen
+                    unintentionally. In this case we think violation should not be imposed.
+4.5 ah     4.5.3.   Regarding rulebook(V.1.) 4.5.3, we have a question when robots place       Refer to FAQ 4.3 - h;
+                    KFS. When both teams' robots tried to place KFS on the same slot           Non-Initiator's KFS: Violation, KFS will return to
+                    simultaneously, how is it handled? To be specific: (a) Team A holds its    game player by referee and retry together with the
+                    KFS in the tic-tac-toe slot first, and team B also tried to place KFS      robot;
+                    afterward. Then, if team A released KFS before team B releases KFS,        Initiator's KFS: Will be restored to its previous state
+                    and that KFS released by team A falls from tic-tac-toe rack because of     by the Referee if it was placed on the Tic-Tac-Toe
+                    the contact with the KFS of team B, is team B considered to have           rack; otherwise, it will remain as-is and can be
+                    committed a violation? (b) Team A and team B come to the tic-tac-toe       reused;
+                    rack and tried to place KFS simultaneously. Then, if team A released
+                    KFS before team B releases KFS, and that KFS released by team A
+                    falls from tic-tac-toe rack because of the contact with the KFS of
+                    team B, is team B considered to have committed a violation? (c) Team
+                    A holds its KFS in the tic-tac-toe slot first, and team B also tried to
+                    place KFS afterward. Then, a robot of the team B pushes a robot of
+                    team A via its KFS, and KFS held by the robot of team A goes out of tic-
+                    tac-toe rack. Is this action done by team B allowed?
+4.5   as   4.5.6    If our R1 only uses one weapon throughout the entire game, does that       Used weapons require disposal before using
+                    weapon have to be disposed in the Used Weapon Area after use? (as          another new weapon. Once the disposal action (i.e.
+                    rule 4.5.6 only mentions disposing is only needed when another             dropping used weapon) has started, it must be
+                    weapon is to be used)                                                      completed else constitutes a violation;
+4.5 bh      4.5     Is it possible to place the KFS horizontally on the bottom row             No, FAQ 4.5 -u;
+           Arena    simultaneously using robot 1?
+4.5   bi    4.5     Can the robot place multiple KFS pieces horizontally at the same time?     No, FAQ 4.5 -u;
+           Arena
+
+
+
+
+Content page                                                                                                                                        27
+4.5   bj   4.5.1.2 Can the R1 robot throw other boxes directly from The Meihua forest to            No, violation, items (KFS, Assembled weapon)
+                    Arena zone before entering the Arena zone with one box?                         must be carried by designated robot to Arena.
+                                                                                                    Refer to Rule 3.7, 4.5.1, 4.5.12, 6.2;
+4.5   bl   4.5.17   The article said "R2 must be lifted or carried by R1, and must not touch        No, R1 initiates lifting or carrying R2 while R2
+                    the ground while placing the KFS in the top row of the Tic-Tac-Toe."            maintains its current stabilized position on the
+                    So my question is Can R1 create a ramp for R2 to climb onto the R1              ground (i.e. without any climbing or movement
+                    body? Does it count as a lift?                                                  actions by R2) until R2 detaches the surface of
+                                                                                                    ground, ways to lift/carry/unload must be powered
+                                                                                                    by R1 and it is up to the robot design;
+4.5 bo     4.5.17   Can R1 lift or carry R2 in the Meihua Forest?                                   Yes, only in R2 Entrance Zone/Exit Zone. Refer to
+                                                                                                    FAQ 4.5 - bl;
+4.5 bp     4.5.18   Can R2 place kfs in the second row of tic-tac-toe while picked up by            No, refer to Rulebook Clarification (Dec 2025) -
+                    R1?                                                                             3.8;
+4.5 bq     4.5.3    The article said "R1 can only use an assembled weapon to attempt to             The defending action will cause violation; Refer to
+                    remove an opponent's KFS occupying any Tic-Tac-Toe slot." So my                 Rulebook Clarification (Dec 2025) - 4.5.3;
+                    question is while the opponent is removing our occupied KFS, do any
+                    one of our robots have the right to defend our own KFS from falling off?
+4.5   br   4.5.3    Can the robot's limbs / components be used to block my own team's               No, Violation; Refer to Rulebook Clarification (Dec
+                    KFS scrolls in the Tic-Tac-Toe slots, by positioning it in front of the slots   2025) - 4.5.3;
+                    to prevent the opponent from pushing it over?
+4.5   bs   4.5.3    1). After removing opponent KFS occupying any Tic-Tac-Toe slot using            1). Yes;
+                    an assembled weapon, while approaching the used weapon area, if the             2). It is violation.
+                    weapon falls in between and not in the used weapon area, is it
+                    necessary to pick it up from the ground and place it in the used weapon
+                    area before approaching for any other task? 2). In the above case if R1
+                    continues for any other task without picking the fallen weapon and
+                    placing it in the used weapon area, will opponent's points for that KFS
+                    placing be considered or not?
+4.5   bt   4.5.3    The article said "R1 can only use an assembled weapon to attempt to             Refer to Rulebook Clarification (Dec 2025) - 4.5.3;
+                    remove an opponent's KFS occupying any Tic-Tac-Toe slot." So my
+                    question is while the opponent is removing our occupied KFS, do any
+                    one of our robots have the right to defend our own KFS from falling off?
+4.5 bu     4.5.3    1). Can we confirm that each weapon is limited to a single KFS, but two         1) No, refer to Rulebook Clarification (Dec 2025) -
+                    separate weapons may remove two separate KFS at the same time?                  4.5.6;
+Content page                                                                                                                                              28
+                    2). Or can a robot remove only one opponent's KFS with 2 assembled                 2) No, refer to Rulebook Clarification (Dec 2025) -
+                    weapons simultaneously?                                                            4.5.3;
+4.5   bv   4.5.3.   Can placing a Assembled Weapon in a Tic-Tac-Toe slot prevent the                   No, violation; Refer to Rulebook Clarification (Dec
+                    opponent from placing a KFS?                                                       2025) - 4.5.3;
+4.5 bw     4.5.3    It is stated in 4.5.3 that R1 can only use an Assembled Weapon to                  No, violation; Refer to Rulebook Clarification (Dec
+           and      remove an opponent's KFS on the Tic-Tac-Toe slot; however, can the                 2025) - 4.5.3;
+           4.5.5    Assembled Weapon be used to block my team's own scrolls from being
+                    removed from the slots, e.g. by positioning it horizontally at the bottom
+                    slots?
+4.5   bx   4.5.3    The rule states R1 can use an assembled weapon to "attempt to                      No, violation; Refer to Rulebook Clarification (Dec
+                    remove an opponent's KFS." Is R1 permitted to use the weapon                       2025) - 4.5.3;
+                    defensively to block or parry an opponent's weapon attack to protect
+                    its own KFS, provided it does not intentionally damage the opponent's
+                    robot?
+4.5   by   4.5.4    After the Assemboled Weapon is used, is it compulsory for the robot to             Refer to Rule 4.5.6; It can hold the weapon if it
+                    immediately dispose of said weapon in the Used Weapon Area, or can                 does not require to use a new assembled weapon;
+                    it hold on to it without using it again, or without using any other
+                    Assembled Weapons?
+4.5   bz   4.5.4,   What if dismantled weapon touches KFS in arena?                                    Violation;
+           4.5.5
+4.5 cb      4.5     In the Arena, if your team's robot accidentally prevents your team's KFS Yes, violation; Refer to FAQ 4.5 – ae;
+                    from falling (e.g., if the arm or body accidentally hits the KFS as it falls
+                    from the rack, preventing it from hitting the ground),is this considered
+                    a violation? Also, if it is done intentionally, is it a violation?
+4.5   cc    4.5     Once a team successfully places a KFS (R1 KFS or R2 KFS) into a vacant slot No, not permanently placed but occupied; Refer
+                    on the Tic-Tac-Toe Rack (Rules 4.5.2, 4.5.13, 4.5.17), is that KFS considered to FAQ 4.5 – k;
+                    permanently placed for the remainder of the game, or can R1 or R2 collect
+                    that KFS back and attempt to place it in a different vacant slot in the Tic-Tac-
+                    Toe Rack?
+4.5 cd      4.5     can R1 pickup R2 right after R2 exit meihua forest                                 Refer to FAQ 4.5 - bo;
+4.5 ce      N/A     What if a weapon ends up in a tic-tac-toe slot without any robot                   1). will be removed
+                    holding/touching it (intentional or not) and blocks KFS from being put             2). removed by referee
+                    in, 1). how will the weapon be handled? 2).Will the referee remove it?             3). Forced retry on the robot that left the weapon
+                    3). Will a violation be triggered?
+
+Content page                                                                                                                                                29
+ 4.5   cg   4.5.1  If R1 provides a ramp-like passive platform (non-actuated, fixed once        Pulling R2 over the ramp is not allowed;
+                   deployed), and R2 initially extends vertically using its own power to        Refer to FAQ 4.5 – bl;
+                   position itself onto the ramp, after which R2 becomes completely
+                   passive/powerless, and then R1 uses its own actuated mechanism to
+                   pull R2 over the ramp, — would this configuration be considered
+                   permissible? In this case: R1 is not directly lifting or carrying R2, but
+                   only pulling it over a ramp. R2 uses its own power only for initial
+                   positioning, and does not actively climb.The final motion of R2 is
+                   entirely driven by R1. There is no simultaneous powered motion from
+                   both robots during the transfer. Kindly confirm whether such a hybrid
+                   passive–active interaction, where R1 assists R2 via a ramp and pulling
+                   mechanism, aligns with the competition rules.
+ 4.5   ci    FAQ In the time interval between "using the weapon" and "disposing the             a, b, c). Yes, provided used weapon is not used in
+            4.5 as weapon", a). is R2 allowed to place KFS? b). Is R1 allowed to lift R2? c).   the process;
+                   Is R1 allowed to place other KFS? If KFS is allowed to be placed after       "Kung Fu master game end" takes precedence
+                   "weapon use", and "dispose weapon" has not yet happened, and Kung            over "requiring to dispose weapon";
+                   Fu master is achieved, the game ends, and R1 no longer has the
+                   opportunity to dispose the weapon. What happens if "Kung Fu master"
+                   is achieved, but used weapon is not disposed? Which of "Kung Fu
+                   master game end" and "requiring to dispose weapon" takes
+                   precedence?
+ 4.5   cj     1    Is it violance if our robot block opponent robot when it push our kungfu     Yes, violation; Refer to Rulebook clarification (Dec
+                   scroll                                                                       2025) - 4.5.3;
+Section 6 End Game
+                                                                                                                                  Update: 2025/12/05
+  Item      Rule    Questions                                                                    Reply
+ 6    a      6      Can KFS that falls into the opponent’s Arena during the game still earn      No, refer to Rule 6.3.4;
+                    points after the game ends?
+ 6     b     6      If the KFS placed in the Tic-Tac-Toe Rack contacts with the robots of its    Successful placement is a stationary KFS placed
+                    own team when the game ends, can it score points?                            onto slot without falling or robot intervention.
+ 6     c     6      Each assembled weapon scores 10 points. If it is dismantled later,           Assembled weapon was counted once
+                    does it still score points?                                                  assembled successfully; Refer to Rule 6.1;
+
+ Content page                                                                                                                                        30
+ 6   d     6.2   If KFS stored in Arena dropped outside Arena, will points be deducted?      Points scored would not be deducted provided
+                                                                                             Rule 6.2 is fulfilled
+ 6   e     6.3   does the KFS need to be fully inserted and stably placed within the slot    Refer to FAQ 6 – b & Rule 6.3;
+                 to be considered “occupying” it? Or would a KFS that is partially
+                 inserted or tilted but remains supported by the rack still be counted for
+                 points?
+                                                                                                                           Update: 2026/02/02
+ 6    f    6.1   If the assembled weapon falls or is dismantled, then will the points be   Refer to FAQ 6 - c;
+                 deducted or not?
+ 6   g     6.3   Scoring points are awarded for KFS "occupying" the rows. If a KFS is Only KFS that remains in slots Tic-Tac-Toe points
+                 successfully placed but is later knocked off the rack by an opponent's will be counted after the game ends.
+                 weapon attack, are the points for that KFS retained, or are they deducted
+                 from the team's score immediately?
+Section 7 Deciding the Winner
+                                                                                                                           Update: 2025/12/15
+  Item    Rule   Questions                                                                      Reply
+ 7    a    2     According to the Rulebook(V.1.) 2.Kung Fu Master, "A team achieves "Kung Fu Referee judgment and POJ final decision;
+                 Master" by placing three of their KFS in a vertical column or diagonal line in
+                 the Tic-Tac-Toe Rack." Consider the situation that opponent's two KFSs are
+                 placed on a bottom left slot and on a middle left slot. Then, our robot's
+                 Assembled Weapon touches the KFS placed on a bottom left slot (but the
+                 KFS is not fallen yet). Then, before the KFS which is placed on a bottom left
+                 slot starts falling, opponent's robot places KFS on a top left slot. Then, the
+                 KFS placed on a bottom left slot is completely pushed by Assembled
+                 Weapon and starts falling. In this case, is the opponent team considered to
+                 have achieved Kung Fu Master? In short, we would like to know the exact time
+                 when KFS is considered to be removed by an Assembled Weapon.
+ 7   b     4.5   If a team has already met the necessary requirements to become a "Kung Fu Referee judgment and POJ final decision;
+                 Master", but the opposing team disrupts these conditions before the referee
+                 declare the team wins the game, can the team still become a "Kung Fu
+                 Master"? Does the opposing team violate?
+
+
+ Content page                                                                                                                               31
+Section 8 Violations
+                                                                                                                               Update: 2025/12/05
+ Item     Rule     Questions                                                                      Reply
+ 8   a     8       According to Rules 8.1 and 8.2, if R1 or R2 enters the opponent's game field,  Momentary unintended projection of the
+                   it is a violation. Then, is it a foul to extend into the space above the       robot into the opponent’s field after extension
+                   opponent's game field?                                                         is allowed.
+ 8   e     8.2     If part of R2 enters the opponent's game field area when picking up a          Violation if part of R2 enters opponent's game
+                   Spearhead, is this considered a violation?                                     field; Momentary unintended projection of the
+                                                                                                  robot into the opponent’s field after extension
+                                                                                                  is allowed; Referee judgment;
+ 8    f    8.4     ⁠Let’s say we R2 takes the spearhead and instead of picking it up, can it just Not Permitted;
+                    rotate and keep it on the spearhead so that R1 can just connect the staff Refer to Rule: 4.3.3 and 4.3.6;
+                    with it with R2 just holding it in place. Is that allowed?
+ 8   g     8.6      Must the robot team still maintain the R1-first, R2-second exit sequence Refer to FAQ 4.5 -b;
+                    when moving from the Martial Club back into the Meihua Forest after a mid-
+                    game retry?
+ 8   aa   8.22      In the Arena, will the used weapon touching the opponent robot be Violation; Assembled weapon is the only means to
+                    considered a violation? For example, the used weapon slipped off R1 after remove opponent’s KFS from Tic-Tac-Toe and can be
+                    using it and touches the opponent robot.                                      used only once; According to Clarification,
+                                                                                                  please find the update: 2026/02/02.
+ 8   ac   8.22      If a robot pushes an opponent KFS out of the tic tac toe rack using its Refer to Rulebook Clarification (Dec 2025) -
+                    mechanisms instead of a weapon. Will this be considered a violation? Who 4.5.3;
+                    will be responsible for putting the KFS back into the original slot?
+ 8   ad   8.22      Is it allowed for any part of the robot or game field objects Momentary unintended projection of the
+                    (KFS/staff/weapon) held by the robot to enter the air space outside of both robot into the opponent’s field after extension
+                    team's game field momentarily? If it is allowed, please define the time is allowed. Referee judgment;
+                    duration of "momentarily".
+ 8   ae   8.22,     If the opponent’s robot makes contact with and displaces a block that has Refer to FAQ 8 - aa;
+          4.5.3–    already been placed in position, how is this situation evaluated according
+          4.5.5     to the competition rules?
+                                                                                                                               Update: 2026/02/02
+ 8   b      8      Is the use of suction on the field or on field objects permitted during the No;
+                   game?
+
+ Content page                                                                                                                                  32
+8    c     8.1     Can the robot hover over the block before picking up the KFS                Refer to FAQ 4.4 - s;
+8    d     8.2     Considering Rule 8.2, is the "opposite half" of the spearhead/tic-tac-toe   Spearhead: To grab the spearhead, R2 is allow
+                   rack included in the opponent's game field areas? Will it be a violation if a
+                                                                                               to cover over the midpoint of the rack based
+                   mechanism of our robot extrudes to the opposite half of the spearhead/tic-  on referee's judgment. However intentional
+                   tac-toe rack?                                                               blocking or prolong coverage would result in
+                                                                                               forced retry;
+                                                                                               Tic-Tac-Toe shelf: Robot is allow to cover over
+                                                                                               the midpoint based on referee's judgment.
+                                                                                               However intentional blocking or prolong
+                                                                                               coverage would result in forced retry;
+8   h      8.7 Is R1 allowed to use R1 KFS to touch R2 KFS? Is R2 allowed to use R2 KFS Not Permitted;
+          /8.8 to touch R1 KFS?
+8    i 8.7/8.8 Are these rules effective in the ramp connecting Meihua Forest and Arena? Yes. RAMP is part of Arena, refer to Rule 6.2;
+8    j     8.9 Are robots allowed to move Fake KFS by means other than having the robot Not Permitted;
+               touching directly, such as by wind, or by pushing fake KFS using game field
+               objects allowed to be held, such as weapon or R1/R2 KFS?
+8   k      8.9 What happen if the fake KFS is moved out of its original block? Will it be Refer to Rule 3.6.3. Any KFS affected by
+               placed back to its original position? If yes, by whom?                          another dropped KFS will remain as-is, and this
+                                                                                               dropped KFS will be restored.
+                                                                                               If a team moves its own KFS (provided the
+                                                                                               moved KFS remains in the forest area) and calls
+                                                                                               for a retry, or if any fake KFS is moved in
+                                                                                               violation, the referee will restore the moved
+                                                                                               KFS to the white marking position of its original
+                                                                                               block. If that position is already occupied by
+                                                                                               another KFS, the moved KFS will be placed at
+                                                                                               the nearest edge of the same block, closest to
+                                                                                               where it was last positioned.
+8   l     8.10 According to 8.10. of the rule book(V 1.0), violation will be taken when “R2 Refer to Rule 8.10;
+               moves onto an MF block when there is a KFS”. Which is the definition of
+               “there is a KFS”? If it does not match with any of followings, we would like
+               to know the precise definition. (1-A) A KFS that was originally there is
+               touching the block (1-B) A part of KFS that was originally there is in the area
+               above the block (1-C) All part of KFS that was originally there is in the area
+Content page                                                                                                                                   33
+                above the block (1-D) A KFS that was originally there is in “the marked
+                square boundary” mentioned in 4.1.5. of the rule book(V.0) (2-A) A KFS,
+                including one originally placed on another block, is touching the block (2-
+                B) A part of KFS, including one originally placed on another block, is in the
+                area above the block (2-C) All part of KFS, including one originally placed
+                on another block, is in the area above the block (3-A) A KFS that was
+                originally there, held by R2, is touching the block (3-B) A part of KFS held by
+                R2, including one originally placed on another block, is in the area above
+                the block (3-C) All part of KFS held by R2, including one originally placed on
+                another block, is in the area above the block
+8   m    8.11   Clarify the definition of “pick up”? If R2's arm grips the KFS (game block)       ‘Pick up’ is defined as the KFS no longer being
+                while the KFS remains in contact with the Meihua Forest platform, does this       in contact with Forest block.
+                situation qualify as “picking up”?
+8   n    8.14   If R1 accidentally uses two separate Assembled Weapons to                         Refer to rule 8.15;
+                simultaneously make contact with a single opponent's KFS, how many of
+                those weapons are counted as 'Used Weapons' that must be retired to the           Both weapons counted as Used Weapon;
+                Used Weapon Area?
+8   o    8.15   If an assembled weapon continuously touches a KFS block without               While using the weapon to take out KFS from
+                release, does it count as a "used weapon"?                                    Tic-Tac-Toe rack, the weapon must be in
+                                                                                              motion or movement and cannot be idle.
+                                                                                              If the team deliberately not to retract the
+                                                                                              weapon - team will be disqualified by POJ;
+                                                                                              Refer to Rule 10.3;
+8   p    8.16   What exactly does damage to the arena include? Does crashing into a wall Yes, if action causes game field damage;
+                count as damaging the arena?
+8   q    8.18   If R2’s manipulator or arm physically extends across both the middle and Please clarify the question;
+                top rows, but it only places one KFS at a time, does this count as an
+                “attempt to place in both rows simultaneously
+8   r           If own team's R2 KFSs dropped on both R1 pathways, according to 8.7, R1 Refer to Rulebook Clarification (Dec 2025) -
+                cannot touch R2 KFS, can I call retry to clear R2 KFS obstructing R1 on R1 8.7;
+                pathway?
+8   s    8.19   Violation 8.19: "If a team’s own KFS is dropped into the opponent’s Meihua Yes, it is a violation;
+                Forest". Is it a violation if a team's own KFS is dropped into the opponent's
+                arena?
+Content page                                                                                                                                    34
+8   u    8.20   From Rulebook(V1.0), the rule Violation 8.20 (R2 KFS dropped in R1             R2 is violation;
+                Pathway), is the resulting Forced Retry imposed on R1, R2, or both robots?
+8   v    8.20   Regarding the definition of "drop", if R2 places down R2 KFS to touch R1       Yes, it is a violation;
+                pathway while holding the R2 KFS, is it a violation?
+8   w    8.20   Are there any consequences if our team's R2 KFS is dropped 1). outside of      MF:
+                the game field, or 2). in our team's zone 1, or 3). in our team's zone 3?      4.4.17. Dropped R2 KFS outside Forest cannot
+                                                                                               be reused;
+                                                                                               Arena:
+                                                                                               4.5.15. Fallen R2 KFS on the opponent’s side
+                                                                                               cannot be reused;
+                                                                                               Violation:
+                                                                                               8.19. If a team’s own KFS is dropped into the
+                                                                                               opponent’s Meihua Forest;
+                                                                                               8.20. If a team’s own R2 KFS is dropped in their
+                                                                                               own R1 Pathway;
+8   x    8.20   In the Meihua Forest, if an R1 KFS dropped in its own R1 pathway, will it be   No, refer to Rule 4.4.7 - R1 can pick up
+                a violation?                                                                   dropped R1 KFS inside Meihua Forest.;
+8   y    8.21   If the placed "used weapon" rolled off the used weapon area after it is        Yes it is violation; Team must continue to
+                completely placed, is it a violation?                                          complete the disposal action else will be
+                                                                                               violation;
+                                                                                               Refer to FAQ Clarification (Jan 2026) – 4.5 - as;
+8   z    8.21   Suppose the team attempts to dispose the used weapon and it falls, such        Not immediately; Team must continue to
+                that the weapon is not completely placed inside the Used Weapon Area.          complete the disposal action;
+                Does this immediately count as a violation? If not, can the team be able to    Refer to FAQ Clarification (Jan 2026) – 4.5 -
+                fix the position until it is completely placed inside the Used Weapon Area?    as;
+8   aa   8.22   In the Arena, will the used weapon touching the opponent robot be              Violation; Unused assembled weapon is the
+                considered a violation? For example, the used weapon slipped off R1 after      only means to remove opponent’s KFS from
+                using it and touches the opponent robot.                                       Tic-Tac-Toe and can be used only once;
+8   ab   8.22   If our R1 only uses one weapon throughout the entire game, after the           Refer to Rule: 4.5.3.
+                weapon is used to push away opponent's KFS from tic-tac-toe area,              a). Yes;
+                a). does the weapon have to be retracted from tic-tac-toe area? b).Or can      b). No, must be retracted;
+                the weapon remain in that tic-tac-toe slot for the remainder of the game?      c). must be retracted immediately;
+                c). If the weapon must be retracted, please define the maximum time
+                duration that a weapon can stay within a tic-tac-toe slot.
+Content page                                                                                                                                  35
+                                                                                                      Unused assembled weapon is the only means
+                                                                                                      to remove opponent’s KFS from Tic-Tac-Toe
+                                                                                                      and can be used only once
+ 8   af    8      Can R2 climb on R1 and place 2 KFS boxes at the same time on the 2nd and            Not permitted; Refer to Rulebook Clarification
+                  top row while on R1's back?                                                         (Dec 2025) - 3.8;
+ 8   ag    8      Can R2 communicate with R1 indirectly via sensor or image processing?               Sensor or image processing is not wireless
+                                                                                                      communication and is acceptable;
+ 8   ah    8      Can R2 extend to the right 1800mm, then retract its arm and extend to the           The team must demonstrate that there is
+                  opposite side 1800mm? That means both sides can extend 1800mm but                   interlocking in R1 and R2 that at any time R1
+                  not at the same time. You have to wait for one side to retract its arm before       and R2 when fully extended do not exceed the
+                  extending the other 1800mm.                                                         dimensions as stated in 12.6 and 12.7;
+                                                                                                      Refer to FAQ 12 -j. The maximum extension for
+                                                                                                      R2 is 1300mm.
+ 8   ai    8      After R1 places the KFS scroll, can it stand right there to block it, to prevent    No, it is violation; Refer to Rulebook
+                  the opponent from knocking down the KFS roll from the first row below?              Clarification (Dec 2025) - 4.5 3 & FAQ
+                                                                                                      Clarification (Jan 2026) – 4.5 - ae;
+ 8   ak   8.16    Whose violation is it when R2s of both team collide with each other during          The one who touches the spearhead is the
+                  spearhead picking?                                                                  initiator and the one after is violation; Referee
+                                                                                                      judgment;
+Section 9 Retry
+                                                                                                                                     Update: 2025/12/05
+  Item    Rule    Questions                                                                           Reply
+ 9    a    9      If both our robots R1 and R2 are in the Arena and need to retry, we require         Yes; Refer to Rule 4.3, regarding assemble
+                  them to return to the corresponding Retry Zones in the Martial Club, as             weapon in Martial Club;
+                  stipulated in rule 9.4.1(3). Then, after they restart, can they assemble            Refer to Rulebook Clarification (Dec 2025) -
+                  weapons in the Martial Club? Must they assemble weapons in the Martial              4.3.9, 4.3.10, 4.5.1 & 4.5.12;
+                  Club? Must R1 carry the assembled weapons when leaving the Martial
+                  Club? Must R1 go first and R2 follow when leaving the Martial Club? Must R2
+                  pass through the Forest? Must R1 and R2 carry the KFSs and/or weapons
+                  when re-entering the Arena?
+ 9   b     9      In Section 9 of the Rulebook, some provisions related general or mandatory          Yes, the team must wait for the referee's
+                  retry are stipulated, but no conditions are set for ending the retry and restart.   signal before restarting the game;
+                  If one of our robots is forced to retry and returns to the retry area. However,
+ Content page                                                                                                                                         36
+                  we do not need to perform any maintenance or adjustments on it at all. Can
+                  we immediately apply to the referee for a restart?
+9   d     9       In Rule 4.4, for R1, 4.4.11 states " The team can request R1 or both R1 and          Refer to Rule 4.4.21;
+                  R2 when in MF to retry and return to the Martial Club Retry Zone (RZ)". This
+                  means that R1 can be retried independently, and R1 and R2 can also be
+                  retried simultaneously. However, for R2, the rules do not mention any retry.
+                  Does this mean that R2 cannot be retried independently?
+9   e     9.1     After the game has started, when a retry is taken, must the robot return to          Yes;
+                  its unextended (initial) dimensions before the retry begins?
+9   o   9.4.1.2   If the team called on a retry in Arena for R2 to the Martial Club's R2 Retry         Refer to FAQ 9 -a;
+                  Zone, does R2 have to walk its way back through the forest block?
+9   p   9.4.1.3   In the situation where R1 is carrying R2 in the Arena when a retry is declared:      1. Yes; Retry for one robot;
+                  1. In this state, is it possible to request a retry for only one of the robots? Or   2. No; Need separate;
+                  does a retry request in this situation automatically apply to both robots? 2.
+                  If we request a retry for both robots in this situation and choose to restart
+                  from the Arena's Retry Zone, is it permissible for R1 to restart in a state
+                  where it is lifting/carrying R2? Or is it necessary to separate R1 and R2 and
+                  restart them one by one?
+                                                                                                                                      Update: 2026/02/02
+9   f    9.1.4    Is it allowed to place a used weapon by a team member to the used weapon             No;
+                  zone from R1 when doing Retry?
+9   g    9.1.4    Does it mean that even if the robot is just barely holding the game field item,      Yes during retry.
+                  we can help it re-adjust the game field item for a better grip for the robot?
+9   h    9.1.4    If a game field object (KFS, spearhead, staff) is touched by the robot, will itRefer to Rule 9.1.4: Only item(s) held by the
+                  be considered held by the robot and therefore can be moved? What is the        robot during a retry can be re-adjusted. Item
+                  difference between "touched" and "held" by the robot?                          that merely touching the robot does not count
+                                                                                                 as being held.
+9   i    9.1.4    If R2 is holding a weapon head under retry, can R1 assemble the weapon Refer Rulebook 9.1.4;
+                  while R2 is under retry conditions?
+9   j   9.1.4.1   If R2's KFS falls onto the R1 pathway, where R2 cannot reach it, what is the 1. No; Refer to Rulebook Clarification (Dec
+                  condition to use it? 1. Can R1 pick up the KFS (from the MF) that is on the R1 2025) - 8.7;
+                  pathway? 2. Do we need to perform a retry for that KFS?                        2. Violation, refer to Rule 8.20;
+
+
+Content page                                                                                                                                         37
+9   k   9.1.4.2   While assembling the weapon — a combined task of both R1 and R2 — what             Items dropped in own side: The team may
+                  is the procedure for a retry, and which robot should take the retry in the         decide whether to request a retry;
+                  following conditions: 1. if Staff falls from R1 without any contact of staff and   Refer to FAQ 4.3 - d;
+                  R1 With R2; 2. if Staff falls from R1 with either contact of staff and R1 With
+                  R2; 3. if spearehead fall on MC from R2 without any contact of staff and R1
+                  With R2; 4. if spearehead fall on MC from R2 with either contact of staff and
+                  R1 with R2;
+9   l   9.1.4.2   What is the procedure for using an assembled weapon if it falls or if its     Refer to Rule section 4.3 in Martial Club.
+                  assembly breaks?                                                              Refer to Rule section 4.4 in Meihua Forest.
+                                                                                                Refer to Rule section 4.5 in Arena
+9   m    9.1.5 Violation 8.19: "If a team’s own KFS is dropped into the opponent’s Meihua Refer to FAQ 4.3 - d;
+                Forest". Retry 9.1.5: "During a retry, team members are not allowed to adjust
+                any other items on the game field that are not held by the robot.". Does that
+                mean the gamefield members do not have to remove their team's KFS from
+                the opponent's gamefield?
+9   n   9.3.1.1 Situation: Our team has used all its Assembled Weapons in the Arena. R1 Refer to Rulebook Clarification 4.3.9 & 4.3.10;
+                and R2 then proceed to the Meihua Forest (MF) to collect more KFS. Due to
+                a technical issue, the team calls a retry, and R1 and R2 return to the Martial
+                Club (MC) Retry Zone. Interpretation Question: Given that R1 no longer has
+                any Staffs or Spearheads available to assemble a new weapon, is R1
+                permitted to exit the Martial Club and return to the Meihua Forest without
+                carrying an Assembled Weapon, or does Rule 4.3.9 or (Violations)8.5 ('R1
+                must exit Martial Club to Meihua Forest with one or more Assembled
+                Weapons') apply to every exit, forcing R1 to remain in the MC?
+9   q    9.1.4 1). If R2 is holding a spearhead that fell down during assembly and a team 1). If R2 is holding the spearhead, no need to
+                member asks for a retry, is the spearhead placed back onto the rack? place back to the spearhead rack.
+                2). and the same question for the KFS, if a KFS is slightly moved by the robot 2). No, remain as-is.
+                (off-centered) and a team member asks for a retry, is the KFS put back in its
+                original position (re-centered)? 3). and if the answer to the first question is
+                No, then can the robot pick up another spearhead from the rack or does it
+                have to pick up the fallen spearhead?
+
+
+
+
+Content page                                                                                                                              38
+Section 10 Disqualifications
+                                                                                                                                      Update: 2025/12/15
+Item         Rule     Questions                                                                       Reply
+ 10  a        10.3.   What is considered "not in the spirit of fair play" specifically? For ex: Can   No, distracting opponent is not allowed;
+                      R1/ R2 has LED Screen show fake KFS image or Spearhead while on Arena/          POJ judgment; Refer to Rule 10.3;
+                      or in MC to distract opponent robot?
+ 10      b   10.5.    Since R2 is an automatic robot, what will happen when R2 from both              Refer to FAQ 4.3 -a;
+                      teams attempt to pick up the same spearhead and collide? Will there be
+                      any procedure (violations, etc.) when two R2 make a collision at
+                      spearhead rack?
+ 10      c   10.6.    Can we have shooting mechanism where we launch game props?                      Not permitted;
+ 10      d   10.6     If R2 moves by jumping off a block in the Meihua Forest—such that it            Permitted to use jumping mechanism;
+                      momentarily leaves the surface before landing on another block—will this        Refer to Rulebook Clarification (Dec 2025) -
+                      type of movement be considered as projectile motion under the rules?            10.6;
+                                                                                                                                      Update: 2026/02/02
+ 10      e    10.7    If a team called on a retry and changes the program of R2, which tells the      a) No, it is not regarded as send command.
+                      path for it to walk through the game field area, a). is it counted as sending
+                      commands? b). But it is not via wireless. How will this action be judged?
+ 10      f    10.7    Rule 10.7 prohibits sending commands to control the robot R2. (a). How          Refer to Rule 10.7; (a). TAC will vet the design of
+                      can we determine whether R1 or the team member sent an instruction to           R1 and R2 based on the specification and the
+                      R2? (b). Does the R2 operator needs to put down his controller after the        vetting. If it is found R2 is controlled by
+                      game starts?                                                                    anything throughout the game, the team will be
+                                                                                                      disqualified. (b). Yes;
+Section 12 Robots
+                                                                                                                                      Update: 2025/12/17
+  Item       Rule     Questions                                                                       Reply
+ 12   a       12      Can compressed air be used to blow the KFS into the empty grid of the Tic-      Not Permitted; Refer to Rulebook Clarification
+                      Tak-Toe Rack?                                                                   (Dec 2025) - 10.6;
+ 12   b       12      Are the robots allowed to suction or stick the game field?                      Not Permitted;
+ 12   c      12.2.    Please clarify what does mean the phrase "automatic one capable of              Means automatic;
+                      operating independently" in Rule 12.2.
+
+
+ Content page                                                                                                                                          39
+12   d   12.3.     Are the following actions with R2 permitted during the setting time and at       (a) Allow;
+                   the start of the game? (a) Informing R2 the location of our KFS that the         (b) Allow;
+                   opponent placed in our MF, for example, by inputting the coordinates. (b)        (c) It is open to the students to design their
+                   Inputting the types and locations of spearheads on the spearhead rack to         robot;
+                   R2. (c) Attaching multiple physical start switches to R2 to select a route in
+                   the MC or MF at the start of the game.
+12   e   12.3.     Is it allowed to use a wireless controller to reconfigure R2 during retry? The   Allowed;
+                   wireless controller will be put aside and not operated during the game
+                   except for retry.
+12   f    12.3.    Is it possible to use an remote emergency power stop for R2?                     Not allowed;
+12   g   12.4. -   Does the KFS carried or held by the robot count as an extension of the           Not count;
+          12.7.    robot’s dimensions? For example, if the KFS temporarily extends beyond
+                   the robot’s allowed size limit, will it be considered a violation?
+12   h    12.4.    Are there any restrictions on the robot's size before the game starts (for       Refer to Rule 4.1.10, 12,4. 12.5;
+         /12.5.    example, during the 1-minute setup time)? The robot will stay within
+                   dimensions of Rule 12.4/12.5 when the game starts, and stay within Rule
+                   12.6/12.7 during the game.
+12   i   12.5.     Are there any restrictions on the robots' dimension during setup time?           Refer to Rule 12.4;
+12   j   12.6.     Suppose our robot has two mechanisms. When both are extended, it                 Team must prove that only one mechanism is
+                   exceeds the size limitations. However, only one mechanism will be                physically extended while the other
+                   extended at a time during the game, so it complies with the maximum size         mechanism is physically locked.
+                   during the game. Does the maximum size in the rule here refer to the             If the referee observes that both mechanisms
+                   maximum size of the robot that is physically possible? Or the maximum            are extended simultaneously after the game
+                   extension during the game?                                                       starts, it will be treated as disqualification.
+12   k   12.6.     The dimension limits apply only to the robot's body and do not include any       Refer to FAQ 12 - g;
+                   game objects the robot is holding, such as a staff or assembled weapon.
+                   Is our assumption correct?
+12   l   12.6. -   Will the robot inspection measure the full extension length or until where       Refer to FAQ 12- g & FAQ 12 - j;
+          12.7.    we programmatically limited one only?
+12   m   12.6.,    Does the staff and KFS and weapons held by R1/R2 count as a part of the          No; Refer to FAQ 12 - g;
+          12.7.    robot, and count in the dimension of the robot when fully extended?
+12   p    12.9.    The intention of Rule 12.9 seems to prohibit radio frequency                     Yes, RF communication is prohibited and other forms of
+                   communication between R1 and R2. R1 and R2 need to cooperate with                signaling such as light and semaphore are not RF
+
+
+Content page                                                                                                                                            40
+                  each other, so can they use other communication methods, such as light, communication; According to Clarification,
+                  semaphore, etc.?                                                        please find the update: 2026/02/02.
+12   q   12.11.   Can R1 communicate with R2 via physical touch like push a button?                     Not permitted. Robot 2 must be an Automatic Robot. It
+                                                                                                        should operate autonomously without manual control
+                                                                                                        once the game starts. According to Clarification,
+                                                                                                        please find the update: 2026/02/02.
+12   r   12.11.   Is R2 allowed to communicate with R1 through wired communication                      Refer to FAQ 12 - q;
+12   s   12.11.   Consider whether the following actions are wireless transmissions, and                Refer to FAQ 12 - p;
+                  do they cause violations. a) Scanning QR code. b) Using RGB/LED light. c)             c) Refer to FAQ 12 - q;
+                  R1 touching R2 buttons.
+12   t   12.11.   Is R2 allowed to have status indicators (LEDs) that notify game field                 Refer to FAQ 12 - s;
+                  members?
+12   u   12.11.   Is R2 allowed to communicate with R1, before the game starts?                         Yes;
+12   v   12.11.   Are we allowed to set up cameras outside the gamefield, to communicate                Not Permitted;
+                  the positions of KFS to R2 before the game starts?
+12   w   12.11.   Will there be any inspection, declaration form, or frequency monitoring to            Refer to Rule 10.7; Require each team to
+                  ensure that no wireless communication occurs between R1 and R2? Or is                 specify it in the specification form, and verify it
+                  this rule intended to be based mainly on team integrity (“honour system”)             in vetting. If found violation during the game,
+                  rather than technical verification?                                                   the team will be disqualified
+12   x   12.11.   According to the rule book(V 1.0) 12.11., the wireless communication between          Robot 1 is a Manual or Automatic Robot. It can be
+                  R1 and R2 is prohibited during the game. We would like to ask if the followings are   operated manually by a team member or autonomously
+                  permitted. (F) The R1 pilot controls R1 while looking at R2 (G) The R1 pilot inputs   without manual control;
+                  R2’s status into R1, and R1 moves automatically based on that. (H) R2 recognize       Robot 2 must be an Automatic Robot. It should operate
+                                                                                                        autonomously without manual control once the game
+                  R1 including R1’s position, status of the R1’s mechanism, movement of the R1’s
+                                                                                                        starts.
+                  mechanism, Strict communication limits between R1 and R2 hinder coordinated
+                                                                                                        Refer to FAQ 12 – w & FAQ 12 – s; According to
+                  tasks like weapon assembly or KFS placement, and precise operation of R1 to
+                  match R2's movement become more important than robot design. If even (H)              Clarification, please find the update:
+                  were not allowed, it would be almost impossible for the two robots to work in         2026/02/02.
+                  harmony. Also, we would like to ask how organizers judge whether teams violate
+                  this regulation or not.
+12   y   12.11    Although R2 is automatic, R2 somehow requires some judgement related Refer to FAQ 12 - s;
+                  to manual R1 to perform tasks (for example, to judge that R1 has left Zone
+                  1, to comply with Rulebook 4.3.10). However, wireless communication
+                  between R1 and R2 is not allowed. What features of R1 can be used for
+
+Content page                                                                                                                                                41
+                   judgement by R2 (for example, LED on R1, position of R1, sign on R1)?
+                   Similar problem has also arised in previous Robocon.
+
+12    z   12.11.   What does "wireless transmission" and "communication" include ?      Refer to FAQ 12 -s;
+12   aa   12.12.   Are we allowed to use electric compressor for vacuum                 Installation on robot is not allowed;
+12   ab   12.15.   The mentioned gas pressure is 600kPa, can we loop back the exhausted Permitted;
+                   gas and reuse it?
+                                                                                                                                  Update: 2026/02/02
+12   n    12.8.    Regarding to the game field, the Red and Blue game fields are mirror- 1. Allowed;
+                   symmetrical, meaning their layouts are left-right reversed. Based on this, we 2. Both left and right side modules must
+                   have the following questions regarding robot configuration. 1. Is it allowed to            be included in the 50kg total weight
+                   reconfigure our robot's mechanisms to suit the assigned field color before a               limit; Refer to Rule 10.1 & 12.8;
+                   game begins? 2. If 1 is allowed, how the total weight is calculated under 12.8
+                   of rulebook(V1.0)? For example, if we swap a "right-side module" for a "left-
+                   side module," are both modules be included in the 50 kg total weight limit?
+12   o    12.8.    Regarding rulebook(V 1.0) 12.8, does the weight limit 50kg include the following? (a) (a) - (d), (g) & (i) - Included;
+                   A Wi-Fi router, not mounted on the robot, that relays communications between the (e), (f), (h)- NOT included;
+                   controller and the robot. (b) Power supply of the Wi-Fi router. (c) A device, not
+                   mounted on the robot, that relays communications between the controller and the
+                   Wi-Fi router (There would be no input or other operations on this device). (d) A
+                   visualizer that displays the robot's status (e.g., position in the field, speed, etc.). This
+                   is not used to control the robot, but provides information to team members. (e)
+                   Walkie-talkie or other audio communication devices that allow team members to
+                   communicate with each other during the match. (f) A personal computer to remotely
+                   control the computer mounted on the robots, to be used only during setting time. (g)
+                   A personal computer to remotely control the computer mounted on the robots, to be
+                   used only during the robot reconfiguration. (h) Jigs to adjust the initial position of the
+                   robots, to be used only during setting time. Also regarding the weight limit, is our
+                   assumption below correct? (i) A "remote emergency stop button" that allows us to
+                   stop a robot remote are exempt from the weight limit since this is aimed to be used
+                   for safety.
+12   p    12.9.    The intention of Rule 12.9 seems to prohibit radio frequency communication Yes, dense communication is prohibited.
+                   between R1 and R2. R1 and R2 need to cooperate with each other, so can they Other forms of signaling such as light and
+                   use other communication methods, such as light, semaphore, etc.?            semaphore are not dense communication.
+
+Content page                                                                                                                                         42
+12   q    12.11.    Can R1 communicate with R2 via physical touch like push a button?                           Not permitted. Robot 2 must be an
+                                                                                                                Automatic Robot. It should operate without
+                                                                                                                manual control once the game starts.
+12   x    12.11.    According to the rule book(V 1.0) 12.11., the wireless communication between R1             Robot 1 is a Manual or Automatic Robot. It
+                    and R2 is prohibited during the game. We would like to ask if the followings are            can be operated manually by a team
+                    permitted. (F) The R1 pilot controls R1 while looking at R2 (G) The R1 pilot inputs R2’s    member or autonomously without manual
+                    status into R1, and R1 moves automatically based on that. (H) R2 recognize R1               control;
+                    including R1’s position, status of the R1’s mechanism, movement of the R1’s
+                                                                                                                Robot 2 must be an Automatic Robot. It
+                    mechanism, Strict communication limits between R1 and R2 hinder coordinated
+                                                                                                                should operate without manual control
+                    tasks like weapon assembly or KFS placement, and precise operation of R1 to match
+                    R2's movement become more important than robot design. If even (H) were not                 once the game starts.
+                    allowed, it would be almost impossible for the two robots to work in harmony. Also,         Refer to FAQ 12 – w & FAQ 12 – s;
+                    we would like to ask how organizers judge whether teams violate this regulation or
+                    not.
+12   ac   12.9      Is the rule only limited to IEEE standards, or any 2.4 GHz equipment that is                Only restricted to the standards mentioned
+                    FCC-Certified?                                                                              in the rulebook, 802.11, 802.15.
+12   ae   12.6,     Even if the robot changes its posture during the match and its vertical and                 Allowed;
+          12.7      horizontal dimensions are reversed, is it acceptable as long as it does not
+                    exceed the specified maximum dimensions (R1: 1000×1800×1300mm, R2:
+                    800×1300×1300mm) at any given moment?
+12   af   12.6. ,   After extending, can the projection of the robot on the opponent field                      Refer to FAQ 14 - b;
+          12.7.     allowed?
+12   ag   12.11     Does "wireless transmission" as stated in Rule 12.11 (R1 and R2 are not                     Refer to FAQ 12 -s;
+                    permitted to communicate with each other via wireless transmission during
+                    the game ) include communication methods such as visual signals (e.g.,
+                    lights, flags, or other line-of-sight means)?
+12   ai   12.11     Can two robots determine each other's positions using positioning tools like        As long as the design of R1 and R2
+                    ROS?                                                                                complies with the game rule.
+12   al   12.6      As mentioned in the FAQ, robots are allowed to extend only from one side at a time. Refer to FAQ 12 - j;
+                    We would like to seek clarification regarding a mechanism on R1 / R2 that operates
+                    as follows: At any given instance, the mechanism extends only from a single side,
+                    remaining within the permitted dimensional limits. After completing its operation,
+                    the mechanism retracts, the robot rotates, and then the same mechanism extends
+                    in a perpendicular direction (i.e., along the other axis). Although the robot alternately
+                    extends along length and width, at no point does it extend from more than one side
+
+Content page                                                                                                                                            43
+                   simultaneously, and it always remains within the allowed dimensions during each
+                   instance of extension. Kindly confirm whether such an alternating, single-side
+                   extension mechanism complies with the extension rules stated in the FAQ.
+12   am    12.6  After extension, the dimensions of R1 and R2 should be within                        Refer to Rule 12.4, 12.5, 12.6, 12.7;
+           and   W1000xL1800xH1300 (mm) and W800xL1300xH1300 (mm), respectively. The
+           12.7  questions are, (a) Are these extension allowances from the centre of the
+                 robot? (In this case, R1 would be able to extend 400mm from either of the two
+                 parallel ends, and R2 would be able to extend 250mm from either of the two
+                 parallel ends). Or, are these allowances after the end of the robot sides (in this
+                 case, R1 can extend 800mm from a single side, and R2 can extend 500mm
+                 from a single side) (b) Can Robot R1 and Robot R2 extend asymmetrically?
+                 (i.e., either 250mm from either of the two parallel sides for an 800mmx800mm
+                 robot, such that it is a 1300mm centric extension, or 500mm from one of the
+                 four sides of the robot for an 800x800mm robot, such that it is a 1300mm one-
+                 side extension) (c) According to 12.4, 12.5, 12.6, and 12.7, we assume that
+                 when a robot needs to extend from the front/back direction to the right/left
+                 direction, it has to come within the 800x800mm start zone limit first and then
+                 extend in the needed direction (due to an extension limit in a single direction
+                 at a time). Is our assumption correct?
+12   an    FAQ   Regarding R2's wireless controller, 1: does the weight of this R2 controller         1: Yes;
+           12e   count into the weight stipulated by Rule Book 12.8. / FAQ 4.1h? 2: Is this R2        2: Yes, it is just similar to a reset button or
+                 controller counted within the ""control unit"" as stated in Rule Book 4.1.10? If     power button, and it is not considered as a
+                 yes, then it seems contradictory to FAQ 12e, since we need to touch the R2           control.
+                 control unit to move it outside of the start zone when the game starts, which
+                 counts as manually controlling R2.
+12   ao    FAQ   This FAQ states R1 is allowed to use visible LED light to send signals to R2, is     Permitted. It is a matter of action and
+           12p   this understanding correct? By this rule, R1 can adjust its light based on           reaction. If R1 sends a signal to R2 and
+                 manual controller input, and R2 can read the light signal using a camera, thus       instruct R2 to move, it is called control. If
+                 R2 will be controlled by R1's manual controller indirectly. Is this allowed? This    R2 reads a signal from R1 and then makes
+                 seems to go against the spirit of R2 being automatic. Thus, are there any            its next step, it is called automatic.
+                 additional rules governing the use of light communication from R1 to R2?             Refer to FAQ 12 – p;
+12   ap   FAQ 12 Can R2 (the autonomous robot) track the ArUco Markers attach on R1                   Permitted;
+            s    permitted or not permitted
+
+
+Content page                                                                                                                                          44
+Section 14 Others
+                                                                                                                                  Update: 2025/12/17
+  Item    Rule  Questions                                                                          Reply
+ 14   a    14   Are there any consequences for our team's spearhead/staff/weapon entering Refer to FAQ 4.3 -d.
+                onto the opponent's game field, except for tic-tac-toe rack?
+ 14   b    14 After extending, can the projection of the robot on the opponent field allowed? Momentary unintended projection of the
+                                                                                                   robot into the opponent’s field after
+                                                                                                   extension is allowed. Referee judgment;
+ 14   c    14 If there is a contradiction between the rule text, pictures and video, which one Refer to the ABU Robocon 2026 Rulebook
+                should be trusted first? In the figure below, the left picture is obtained from and Appendix documents.
+                Appendix 4.1, the right one is obtained from the rule video. Which one is correct?
+ 14   d   14.1. Is it permissible for R2 to recognize the Forest and where KFSs are placed until Please refer to Rule Section 4.2: Start of
+                the game starts after the setting time ends?                                       the Game; After setup time, team
+                                                                                                   members are not allowed to touch the
+                                                                                                   robot except the start button.
+ 14   e   14.1. We would like to clarify if the following mechanisms are permissible for gripping 1) Not permitted; Refer to Rulebook Clarification
+                game objects such as KFS.                                                          (Dec 2025) - 10.6;
+                                                                                                   2) Permitted to use KFS gripping by Vacuum Pads
+                1. Suction by Airflow: A mechanism that generates continuous airflow (e.g., with (Suction Cups), please refer to Rule Section 4:
+                a fan, propeller, or compressed air blower) to attract and hold an object.         Game Procedure;
+                2. Gripping by Vacuum Pads (Suction Cups): A mechanism that grips an object According to Clarification, please find the
+                by sealing a pad (i.e., a suction cup) against its surface and creating a vacuum. update: 2026/02/02.
+                This includes mechanisms using vacuum pumps powered by compressed air.
+                Could you please provide answers for each method separately?
+                                                                                                                                  Update: 2026/02/02
+ 14   e   14.1. We would like to clarify if the following mechanisms are permissible for gripping 1) Not permitted; Refer to Rulebook
+                game objects such as KFS.                                                           Clarification (Dec 2025) - 10.6;
+                1) Suction by Airflow: A mechanism that generates continuous airflow (e.g., with 2) Vacuum is not permitted;
+                a fan, propeller, or compressed air blower) to attract and hold an object. 2)
+                Gripping by Vacuum Pads (Suction Cups): A mechanism that grips an object by
+                sealing a pad (i.e., a suction cup) against its surface and creating a vacuum. This
+                includes mechanisms using vacuum pumps powered by compressed air.
+                Could you please provide answers for each method separately?
+
+
+ Content page                                                                                                                                         45
+Section 16 Texts/ Symbols on KFS
+                                                                                                                                              Update: 2026/02/02
+  Item       Rule        Questions                                                                                Reply
+ 16    a       16.       For kfs, is kfs real robot 2 always marked with a red box and kfs fake always marked     The color of the KFS is determined by the
+               Texts /
+                         with a blue box? If not, what determines whether kfs real and kfs fake can be red or     team's color; Refer to ‘Appendix V1.1.pdf’;
+              Symbol
+              on KFS     blue?
+
+Section Appendix
+                                                                                                                                              Update: 2025/12/17
+  Item        Rule       Questions                                                                                Reply
+App.1    a     15        Are the staff rack and spearhead rack attached to the arena?                                Not in ARENA section; Those racks will be
+                                                                                                                     fixed and attached to the MC game field;
+App.2    b   Appendix    Is the arrangement of the spear heads on the spear head rack given in the appendix Yes;
+               2.5       going to be the same in the actual matches?
+App.3    a   Appendix    How much are the length and diameter of the coach bolts used to fix the acrylic plates Refer to Appendix 3 - Tic-Tac-Toe Rack;
+                3        for the Tic Tac Toe Rack? How is the acrylic plate at the top of the Tic Tac Toe Rack
+                         fixed? Could you provide the dimension and/or the part name of the bolt, and show the
+                         length from the highest exposed part of the bolt to the surface of the acrylic?
+App.3    c   Appendix    In Appendix 3, there is a “Centre line” on the acrylic sheet of the Tic Tac Toe Rack. Is it Any method to put the line; Was designed to
+                3        engraved onto the acrylic sheet? What is it used for? This Centre line was never assist referee judgment if needed;
+                         mentioned in any Rule.
+App.3    d   Appendix    Regarding rulebook(V.1.) appendix 3 - Tic-Tac-Toe Rack, we have the question about a Referee judgment and Refer to FAQ 4.5 - ap;
+                3        centre line on the tic-tac-toe rack. When a robot place KFS onto the tic-tac-toe rack, Successful placement is a stationary KFS
+                         which of the followings are allowed: 1-a. A mechanism to place KFS goes over the placed onto slot without falling or robot
+                         centre line on the tic-tac-toe rack. 1-b. A mechanism to place KFS goes through the intervention;
+                         tic-tac-toe rack into the opponent side. When a robot use an assembled weapon to
+                         attempt to remove an opponent's KFS, which of the followings are allowed: 2-a. An
+                         assembled weapon goes over the centre line on the tic-tac-toe rack. 2-b. An
+                         assembled weapon goes through the tic-tac-toe rack into the opponent side.
+App.4    b   Appendix    Could you please clarify the exact material used for the stickers covering the KFS? Matte vinyl sticker;
+               4.1       Specifically, are they paper-based, vinyl, laminated, or another type of sticker, and
+                         what is their approximate thickness or surface finish (matte or glossy)?
+                                                                                                                                                 Update: 2026/02/02
+App.2    a   Appendix    Assuming that the staffs on the staff Rack as described in Rule 4.3.2 have already been Refer to Appendix 2.1 - Staff; PVC pipe glued
+                2        assembled with 30PM quick coupler, it can be seen from Appendix 2.1 that the with assemble connector;
+                         connectors are glued into the PVC pipe. Is this bonding strong enough? What should be
+ Content page                                                                                                                                                   46
+                 done if the assembled weapon disintegrates at the glue during the game? The purchase
+                 link provided in the new Appendix V1.0 also includes information about thread taps. So,
+                 are the quick couplers glued into the PVC pipes or connected by threading?
+App.4 c Appendix We would like to ask about the detailed surface specifications of KFS. According to the         Sticker size referring to 'KFS Image V1.0.pdf';
+          4.1    Appendix 4.1 of the rulebook V1.0, it is stated that the KFS is a "Carton Box, cover by 6       The sticker is a die-cut sticker, not cover the
+                 sides of sticker" and that the "symbolic texts/pictures are sticked on 5 sides". 1.             whole surface of the box;
+                 Regarding the sticker. (1.1) Is the sticker fully adhered to the entire surface of each face?
+                 To be more specific, does the adhesion cover the entire rear surface of the sticker, or is
+                 it only applied in certain areas (e.g., at the edges or in spots)? (1.2) Can we expect the
+                 surface to be free of significant wrinkles or air bubbles? (1.3) The photo in Appendix 4.1
+                 shows very clean corners on the KFS. Could you clarify how the sticker or stickers are
+                 applied to the box? For example, is a single, continuous sticker wrapped around the box,
+                 or are six separate stickers used, and how are the seams at the edges treated?
+App.4 d Appendix 2. Regarding the Symbolic Texts/Pictures. We would like to clarify how the "symbolic            The stickers will be a die-cut sticker that is
+          4.1    texts/pictures" are sticked to the box. Which of the following methods is correct? (a).         designed to be affixed to the surface of the
+                 Printing. In other words, symbolic texts/pictures are printed directly onto a large, single-    base-color box; Refer to the 'KFS Image
+                 piece base sticker (e.g., a red or blue sticker), and this sticker is then applied to each      V1.0.pdf';
+                 face of the box. (b). Layered Stickers. In other words, a plain, base-color sticker is first
+                 applied to the box, and then symbolic texts/pictures are applied as a separate, die-cut
+                 sticker on top of that base-color sticker.
+App.4 e Appendix Appendix 4.1 presents 15 recognition Patterns for R2 KFS and 15 recognition Patterns            Refer to Appendix V1.1.pdf;
+          4.1    for fake KFS. We know that in the game, the numbers of R2 KFS for the red team and the          1. Each team may freely select and arrange
+                 blue team are 4 each, while the numbers of fake KFS for the red team and the blue team          any items from the 15 types of KFS.
+                 are only 1 each. So, are the Patterns on the R2 KFS of two teams the same for each pair?        2. Each team may choose and arrange items
+                 Are the Patterns on the fake KFS of two teams team the same? And, once these Patterns           from the three types of fake books.
+                 are determined, will they no longer change in the matches?                                      3. Once selected, the items cannot be
+                                                                                                                 changed.
+App.4   f        What is the size of the Oracle character and 2026 Robocon on KFS? As they are not
+            Appendix                                                                                             Sticker size referring to 'KFS Image V1.0.pdf'
+              4.1provided in the Rulebook.                                                                       in size of A4;
+App.4 g Appendix What is the combination of characters on fake KFS? Is there a specific combination for          Refer to ‘Appendix V1.1.pdf’;
+          4.1    them?
+App.4 h Appendix The KFS are described as carton boxes. Could the Committee provide specifications Teams to ensure their grippers can lift the
+          4.1    regarding the structural integrity or load-bearing capacity of these boxes? What is the specified KFS without causing damage that
+                 maximum gripping force we can apply before the box is considered "damaged" or impacts gripping or structure.
+                 deformed, which might constitute a violation under Rule 8.17 (damage to game
+                 field/facilities)?
+
+
+Content page                                                                                                                                                      47
+
