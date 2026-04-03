@@ -6,6 +6,7 @@ from typing import Dict, Iterable, List, Optional, Set, Tuple
 
 ENTRANCE_NODE = "E"
 ENTRANCE_BLOCKS = (2,)
+ENTRY_LANE_BLOCKS = (1, 2, 3)
 PATHWAY_HEIGHT_MM = 0
 
 GRAPH: Dict[int, Tuple[int, ...]] = {
@@ -42,13 +43,15 @@ DEFAULT_HEIGHTS: Dict[int, int] = {
 @dataclass(frozen=True)
 class OfficialRules:
     entrance_blocks: Tuple[int, ...] = ENTRANCE_BLOCKS
+    entry_lane_blocks: Tuple[int, ...] = ENTRY_LANE_BLOCKS
     official_exit_blocks: Tuple[int, ...] = (10, 12)
     # Assumption: legal boundary blocks for R1 are perimeter blocks in the 3x4 forest.
     legal_r1_boundary_blocks: Tuple[int, ...] = (1, 2, 3, 4, 6, 7, 9, 10, 11, 12)
     must_exit_with_at_least_one_r2: bool = True
-    first_pick_from_entrance_if_r2_in_1_3: bool = True
+    first_pick_from_entrance_if_r2_in_entry_lane: bool = True
     # If True, R1 blocks can be cleared by R1 robot after wait.
     allow_r1_clearance_wait: bool = True
+    fake_forbidden_blocks: Tuple[int, ...] = ENTRY_LANE_BLOCKS
 
 
 @dataclass(frozen=True)
@@ -127,6 +130,31 @@ class Plan:
     score: float
 
 
+def block_position(node: int) -> Tuple[int, int]:
+    idx = int(node) - 1
+    return divmod(idx, 3)
+
+
+def count_route_turns(route: List[int]) -> int:
+    turns = 0
+    for i in range(1, len(route) - 1):
+        r0, c0 = block_position(route[i - 1])
+        r1, c1 = block_position(route[i])
+        r2, c2 = block_position(route[i + 1])
+        prev_vec = (r1 - r0, c1 - c0)
+        next_vec = (r2 - r1, c2 - c1)
+        if prev_vec != next_vec:
+            turns += 1
+    return turns
+
+
+def entrance_side_pickup_targets(config: PlannerConfig) -> Set[int]:
+    targets = set(config.official.entrance_blocks)
+    for block in config.official.entrance_blocks:
+        targets.update(neighbors(block))
+    return targets
+
+
 def neighbors(node: str | int) -> Tuple[int, ...]:
     if node == ENTRANCE_NODE:
         return ENTRANCE_BLOCKS
@@ -162,8 +190,10 @@ def validate_layout(layout: Layout, config: PlannerConfig, strict_counts: bool =
     if overlaps:
         errors.append(f"Overlapping KFS placement at blocks: {sorted(overlaps)}")
 
-    if any(b in {1, 2, 3} for b in layout.fake_blocks):
-        errors.append("Fake KFS cannot be placed on blocks 1,2,3")
+    forbidden_fake = set(config.official.fake_forbidden_blocks)
+    bad_fake = [b for b in layout.fake_blocks if b in forbidden_fake]
+    if bad_fake:
+        errors.append(f"Fake KFS cannot be placed on blocks {sorted(forbidden_fake)}")
 
     legal_r1 = set(config.official.legal_r1_boundary_blocks)
     bad_r1 = [b for b in layout.r1_blocks if b not in legal_r1]
@@ -191,18 +221,19 @@ def validate_move(
     from_node: str | int,
     to_node: int,
     remaining_r2: Set[int],
+    remaining_r1: Set[int],
     config: PlannerConfig,
 ) -> Tuple[bool, str]:
     if to_node not in neighbors(from_node):
         return False, "not adjacent (4-neighbor only)"
     if to_node in remaining_r2 or to_node in set(layout.fake_blocks):
         return False, "cannot step onto a block that currently contains KFS"
-    if to_node in set(layout.r1_blocks) and not config.official.allow_r1_clearance_wait:
+    if to_node in remaining_r1 and not config.official.allow_r1_clearance_wait:
         return False, "cannot step onto a block that currently contains KFS"
     if not movement_height_ok(layout, from_node, to_node, config.robot):
         return False, "height transition is not allowed by robot mechanics"
 
-    if to_node in set(layout.r1_blocks) and config.official.allow_r1_clearance_wait:
+    if to_node in remaining_r1 and config.official.allow_r1_clearance_wait:
         return True, "ok_with_r1_wait"
     return True, "ok"
 
@@ -255,20 +286,22 @@ def _pickup_transition(hidden: int, grip: int, config: PlannerConfig) -> Optiona
 def validate_candidate_plan(layout: Layout, route: List[int], pickups: List[int], config: PlannerConfig) -> Tuple[bool, List[str]]:
     reasons: List[str] = []
     remaining_r2 = set(layout.r2_blocks)
+    remaining_r1 = set(layout.r1_blocks)
     pickup_order = list(pickups)
 
     node: str | int = ENTRANCE_NODE
     hidden = 0
     grip = 0
     wait_actions = 0
-    entrance_targets = set(config.official.entrance_blocks)
-    if config.official.first_pick_from_entrance_if_r2_in_1_3 and remaining_r2.intersection(entrance_targets):
+    entry_lane_targets = set(config.official.entry_lane_blocks)
+    entrance_pick_targets = entrance_side_pickup_targets(config)
+    if config.official.first_pick_from_entrance_if_r2_in_entry_lane and remaining_r2.intersection(entry_lane_targets):
         if not pickup_order:
             reasons.append("first pickup from entrance required when R2 exists on entrance blocks")
         else:
             first_target = pickup_order[0]
-            if first_target not in neighbors(ENTRANCE_NODE):
-                reasons.append("first pickup must be done from entrance anchor")
+            if first_target not in entry_lane_targets or first_target not in entrance_pick_targets:
+                reasons.append("first pickup must be done from the entrance-side anchor")
         if reasons:
             return False, reasons
 
@@ -291,12 +324,13 @@ def validate_candidate_plan(layout: Layout, route: List[int], pickups: List[int]
         return False, [err]
 
     for nxt in route:
-        ok, reason = validate_move(layout, node, nxt, remaining_r2, config)
+        ok, reason = validate_move(layout, node, nxt, remaining_r2, remaining_r1, config)
         if not ok:
             reasons.append(f"invalid move {node}->{nxt}: {reason}")
             return False, reasons
         if reason == "ok_with_r1_wait":
             wait_actions += 1
+            remaining_r1.discard(nxt)
         node = nxt
         err = consume_pickups_at_anchor(node)
         if err:
@@ -323,17 +357,28 @@ def plan_routes(layout: Layout, config: Optional[PlannerConfig] = None, top_n: i
     if not ok:
         raise ValueError(f"invalid layout: {errs}")
 
-    initial_remaining = frozenset(layout.r2_blocks)
-    pq: List[Tuple[Tuple[int, int, int], Tuple[str | int, frozenset, int, int], List[int], List[int], int, int, int]] = []
+    initial_remaining_r2 = frozenset(layout.r2_blocks)
+    initial_remaining_r1 = frozenset(layout.r1_blocks)
+    pq: List[
+        Tuple[
+            Tuple[int, int, int],
+            Tuple[str | int, frozenset, frozenset, int, int],
+            List[int],
+            List[int],
+            int,
+            int,
+            int,
+        ]
+    ] = []
     # priority tuple: (steps, handling_ops, -picked)
-    heapq.heappush(pq, ((0, 0, 0), (ENTRANCE_NODE, initial_remaining, 0, 0), [], [], 0, 0, 0))
+    heapq.heappush(pq, ((0, 0, 0), (ENTRANCE_NODE, initial_remaining_r2, initial_remaining_r1, 0, 0), [], [], 0, 0, 0))
 
-    best_cost: Dict[Tuple[str | int, frozenset, int, int], Tuple[int, int, int]] = {}
+    best_cost: Dict[Tuple[str | int, frozenset, frozenset, int, int], Tuple[int, int, int]] = {}
     finals: List[Plan] = []
 
     while pq:
-        (steps, handling_ops, neg_picked), (node, rem, hidden, grip), route, pickups, pick_actions, drop_actions, wait_actions = heapq.heappop(pq)
-        key = (node, rem, hidden, grip)
+        (steps, handling_ops, neg_picked), (node, rem_r2, rem_r1, hidden, grip), route, pickups, pick_actions, drop_actions, wait_actions = heapq.heappop(pq)
+        key = (node, rem_r2, rem_r1, hidden, grip)
         cost_here = (steps, handling_ops, neg_picked)
         if key in best_cost and best_cost[key] <= cost_here:
             continue
@@ -342,7 +387,7 @@ def plan_routes(layout: Layout, config: Optional[PlannerConfig] = None, top_n: i
         carried = hidden + grip
         if node != ENTRANCE_NODE:
             exit_ok, _ = validate_exit(layout, int(node), carried, cfg)
-            if exit_ok and int(node) not in rem and len(pickups) >= cfg.strategy.min_pickups_required:
+            if exit_ok and int(node) not in rem_r2 and len(pickups) >= cfg.strategy.min_pickups_required:
                 finals.append(
                     Plan(
                         route=list(route),
@@ -351,32 +396,37 @@ def plan_routes(layout: Layout, config: Optional[PlannerConfig] = None, top_n: i
                         steps=steps,
                         pickup_actions=pick_actions,
                         drop_actions=drop_actions,
-                        turn_actions=drop_actions,
+                        turn_actions=count_route_turns(route),
                         wait_actions=wait_actions,
                         carried_count=carried,
                         score=0.0,
                     )
                 )
 
-        rem_set = set(rem)
+        rem_r2_set = set(rem_r2)
+        entrance_pick_targets = entrance_side_pickup_targets(cfg)
         # Pickup transitions from current anchor.
         for target in neighbors(node):
-            if target not in rem_set:
+            if target not in rem_r2_set:
                 continue
 
             if (
-                cfg.official.first_pick_from_entrance_if_r2_in_1_3
+                cfg.official.first_pick_from_entrance_if_r2_in_entry_lane
                 and len(pickups) == 0
-                and set(rem).intersection(set(cfg.official.entrance_blocks))
+                and set(rem_r2).intersection(set(cfg.official.entry_lane_blocks))
             ):
-                if node != ENTRANCE_NODE:
+                if target not in set(cfg.official.entry_lane_blocks):
+                    continue
+                if node != ENTRANCE_NODE and node not in set(cfg.official.entrance_blocks):
+                    continue
+                if target not in entrance_pick_targets:
                     continue
 
             transition = _pickup_transition(hidden, grip, cfg)
             if transition is None:
                 continue
             n_hidden, n_grip, add_pick, add_drop = transition
-            n_rem = frozenset(x for x in rem if x != target)
+            n_rem_r2 = frozenset(x for x in rem_r2 if x != target)
             n_pickups = list(pickups) + [target]
             n_steps = steps
             n_handling = handling_ops + add_pick + add_drop
@@ -385,7 +435,7 @@ def plan_routes(layout: Layout, config: Optional[PlannerConfig] = None, top_n: i
                 pq,
                 (
                     (n_steps, n_handling, n_neg_picked),
-                    (node, n_rem, n_hidden, n_grip),
+                    (node, n_rem_r2, rem_r1, n_hidden, n_grip),
                     list(route),
                     n_pickups,
                     pick_actions + add_pick,
@@ -396,15 +446,17 @@ def plan_routes(layout: Layout, config: Optional[PlannerConfig] = None, top_n: i
 
         # Move transitions.
         for nxt in neighbors(node):
-            ok_move, move_reason = validate_move(layout, node, nxt, rem_set, cfg)
+            rem_r1_set = set(rem_r1)
+            ok_move, move_reason = validate_move(layout, node, nxt, rem_r2_set, rem_r1_set, cfg)
             if not ok_move:
                 continue
             add_wait = 1 if move_reason == "ok_with_r1_wait" else 0
+            n_rem_r1 = rem_r1 if add_wait == 0 else frozenset(x for x in rem_r1 if x != nxt)
             heapq.heappush(
                 pq,
                 (
                     (steps + 1, handling_ops + add_wait, neg_picked),
-                    (nxt, rem, hidden, grip),
+                    (nxt, rem_r2, n_rem_r1, hidden, grip),
                     list(route) + [nxt],
                     list(pickups),
                     pick_actions,

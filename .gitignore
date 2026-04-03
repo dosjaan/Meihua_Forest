@@ -1,3 +1,5 @@
 .venv/
 __pycache__/
 *.pyc
+.codex
+.vscode/browse.vc.db
