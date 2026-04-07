@@ -209,3 +209,21 @@ A solution is correct only if:
 - Start with CLI / backend planner first
 - Then add Streamlit GUI
 - Write tests before GUI integration
+
+## J. Robot bridge
+
+For robot integration, the planner should expose:
+
+- route as ordered anchor blocks,
+- pickup targets,
+- exit block,
+- a ROS-facing bridge that can publish the chosen route as `nav_msgs/Path`,
+- and a mapping from block IDs to real field anchor poses instead of only a placeholder grid.
+
+Current integration note:
+
+- `/home/saruul/Meihua_Forest/planner_ros_bridge.py` now publishes `/planner/path` for `automate_robot`,
+- `automate_robot/src/main` buffers that path and only consumes it in the `MEIHUA_FOREST` phase after `enter_meihua_forest`,
+- the remaining gap is replacing the bridge's configurable grid mapping with field-calibrated Meihua anchor coordinates.
+
+The bridge may keep block IDs internal, but the robot-facing side should publish map-frame anchor poses so the robot project can subscribe directly.

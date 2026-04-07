@@ -22,6 +22,47 @@ streamlit run app.py
 4. Browser:
 - `http://localhost:8501`
 
+## ROS Bridge
+
+The planner can also publish the best route directly to the robot project as `nav_msgs/Path`.
+
+Requirements:
+
+- source your ROS 2 environment first,
+- run this from the same machine that can talk to `automate_robot`.
+
+Example:
+
+```bash
+cd /home/saruul/Meihua_Forest
+source /opt/ros/humble/setup.bash
+
+python3 planner_ros_bridge.py \
+  --r2-blocks 1,3,5,8 \
+  --r1-blocks 10,11,12 \
+  --fake-blocks 6 \
+  --field-side blue \
+  --top-left-x 0.0 \
+  --top-left-y 0.0 \
+  --block-pitch-x 0.40 \
+  --block-pitch-y 0.40 \
+  --publish-enter-event
+```
+
+What it does:
+
+- computes the best legal plan using `planner_backend.py`,
+- converts the route blocks into map-frame anchor poses,
+- publishes `nav_msgs/Path` on `/planner/path`,
+- optionally publishes `enter_meihua_forest` on `/main/event`,
+- matches the current `automate_robot` contract where `main` buffers `/planner/path` and only consumes it in the `MEIHUA_FOREST` phase.
+
+Important note:
+
+- the default block-to-pose mapping is only a simple configurable grid,
+- before real robot use, you should tune `top_left_x`, `top_left_y`, `block_pitch_x`, `block_pitch_y`, and yaw so the published path matches the real field anchors,
+- the current bridge is good enough for path-interface integration, not yet for final match-calibrated forest execution.
+
 ## Tabs
 
 ## `Manual Layout + Plan`
